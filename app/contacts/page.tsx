@@ -10,7 +10,7 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 const iconStyle = {
-  color: 'darkRed',
+  color: 'yellow',
   fontSize: '33px',
   cursor: 'pointer',
 };

@@ -15,21 +15,21 @@ const Menu = () => {
     <main className={styles.mainContainer}>
       <div
         className={
-          activePage === '/home' ? styles.activeMenuItemWhite : styles.menuItem
+          activePage === 'home' ? styles.activeMenuItemWhite : styles.menuItem
         }
       >
-        <Link href='/home'>Home</Link>
+        <Link href='/'>Home</Link>
       </div>
       <div
         className={
-          activePage === '/about' ? styles.activeMenuItem : styles.menuItem
+          activePage === '/about' ? styles.activeMenuItemWhite : styles.menuItem
         }
       >
         <Link href='/about'>About</Link>
       </div>
       <div
         className={
-          activePage === '/contacts' ? styles.activeMenuItem : styles.menuItem
+          activePage === '/contacts' ? styles.activeMenuItemWhite : styles.menuItem
         }
       >
         <Link href='/contacts'>Contacts</Link>

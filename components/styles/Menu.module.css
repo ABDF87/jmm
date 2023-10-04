@@ -9,7 +9,7 @@
   justify-content: center;
   width: 100px;
   padding: 10px;
-  color:#a8a6a6;
+  color:#a09e9e;
   cursor: pointer;
   font-size: 14px;
 }
@@ -44,6 +44,6 @@
 
   }
 .menuItem:hover {
-    color:rgb(211, 209, 209);
+    color:rgb(220, 187, 91);
   /* border-bottom: 1px solid #e41207; */
 }

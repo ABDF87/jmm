@@ -27,7 +27,9 @@ const customStyles = {
     transition: 'all 3s ease',
     padding: '0px',
     border: 'none',
+    backgroundColor: 'transparent',
     size: '100%',
+ 
   },
 };
 
