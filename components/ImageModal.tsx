@@ -7,9 +7,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
-  indexImage: number;
+  indexImage: number ;
 }
 type currentIndex = number;
+
 const customStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
@@ -30,7 +31,7 @@ const customStyles = {
   },
 };
 
-const buttonsContainer = {
+const buttonsContainer:any = {
   position: 'absolute',
   display: 'flex',
   justifyContent: 'space-between',
@@ -60,7 +61,6 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
   const [currentIndex, setCurrentIndex] = useState<currentIndex>(indexImage);
   const [activeIndex, setActiveIndex] = useState<currentIndex>(0);
 
-  console.log('indexImage', indexImage);
   //   Modal.setAppElement('#root')
 
   useEffect(() => {
@@ -97,11 +97,9 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
   const handleKeyPress = (event: any) => {
     if (event.key === 'ArrowRight') {
       nextImage();
-      console.log('event.key', event.key);
     }
     if (event.key === 'ArrowLeft') {
       prevImage();
-      console.log('event.key', event.key);
     }
   };
        // Attach the event listener when the component mounts

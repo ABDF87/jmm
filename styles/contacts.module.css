@@ -87,8 +87,8 @@
   cursor: pointer;
 }
 .formButton:hover {
-  background-color: #fafbfb;
-  color: #080808;
+  background-color: #262626;
+
 }
 .messageSent{
     background-color: transparent;

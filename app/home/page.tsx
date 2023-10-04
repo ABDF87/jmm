@@ -14,18 +14,14 @@ type photo = {
   src1: string;
   src2?: string;
 };
-type MyStateType = number | null;
+type MyStateType = number ;
 
 const Home = () => {
-  const [photos, setPhotos] = useState<photo[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageUrl, setSelectedImageUrl] = useState('');
   const [selectedImageId, setSelectedImageId] = useState<MyStateType>(0);
   const [activeImageId, setActiveImageId] = useState<MyStateType>(0);
 
-  useEffect(() => {
-    setPhotos(photosToLoad);
-  }, []);
 
   const openModal = (imageIndex: number) => {
     setSelectedImageId(imageIndex);
@@ -42,7 +38,6 @@ const Home = () => {
     setIsModalOpen(false);
   };
 
-  console.log(photos, 'photos');
 
   return (
     <main className={styles.mainContainer}>
