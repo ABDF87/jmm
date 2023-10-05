@@ -1,0 +1,57 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    background-image: url('/photo/heirloon_tomatoo_1_i.jpg');
+    /* background-color: #0e0d0d; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .photoContainer {
+    width: 100%;
+    float: right;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+   
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .row img:hover {
+    transform: scale(1.2); /* Increase the scale to zoom in on hover */
+    transition: transform 3s;
+    cursor: pointer;
+  }
+  .imageWrapper {
+    display: flex;
+    overflow: hidden;
+    width: 50%;
+    height: auto;
+  }
+  .verticalSplitter {
+    height: auto;
+    width: 3px;
+    background-color: transparent;
+  }
+  
+  .fullscreenRow {
+    width: 100%;
+    cursor: pointer;
+  }
+  .filler {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 2;
+  }
+  

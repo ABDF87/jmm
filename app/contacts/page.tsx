@@ -53,9 +53,9 @@ const Contacts = () => {
       <div className={styles.mainWrapper}>
         <Title />
 
-       
-        <div className={styles.topWrapper}>
-          <div className={styles.instagramTitle}>
+       <div className={styles.lowerWrapper}>
+        <div className={styles.instaFormWrapper}>
+          <div className={styles.instagramContainer}>
             <BsInstagram
               style={iconStyle}
               onClick={() => {
@@ -115,6 +115,7 @@ const Contacts = () => {
           </div>
         )}
         </div>
+      </div>
       </div>
       <Footer />
     </div>
