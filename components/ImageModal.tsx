@@ -22,13 +22,15 @@ const customStyles = {
     left: '50%',
     right: 'auto',
     bottom: 'auto',
+    width: '50%',
+    height: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     transition: 'all 3s ease',
     padding: '0px',
     border: 'none',
     backgroundColor: 'transparent',
-    size: '100%',
+    size: 'auto',
  
   },
 };

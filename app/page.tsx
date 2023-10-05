@@ -177,7 +177,6 @@ const Home = () => {
            </div>
            <div className={styles.verticalSplitter}></div>
 
-           <div className={styles.verticalSplitter}></div>
            <div className={styles.imageWrapper}>
              <img
                alt={''}
