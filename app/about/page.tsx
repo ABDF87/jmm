@@ -21,9 +21,12 @@ const About = () => {
             practice many aspect of photography: portraits, pet portraits,
             street photography, nature, B&W. I also continue to paint and
             sculpt.
-            <br />
-            <br />
-            <br />
+          </p>
+
+          <br />
+          <br />
+          <br />
+          <p>
             My History
             <br />
             <br />

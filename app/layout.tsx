@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Jean-Marc Mazzoni',
-  description: 'food phtorhraphy',
+  description: 'food photography',
   icons: {
     icon: '/favicon.ico',
   },

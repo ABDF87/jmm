@@ -10,28 +10,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+ padding-right: 20px;
   z-index: 50;
 }
 .mainWrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 20px;
+
 }
 .mainTitle {
   display: flex;
   flex-direction: column;
   justify-content: right;
-  align-items: right;
   color: #fbfbfb;
-  width: auto;
+  width: 100%;
   z-index: 50;
   font-family: 'Nunito Sans', sans-serif;
 }
 .titleWrapper {
   display: flex;
   flex-direction: column;
-
   width: 170px;
 }
 .titleName {
@@ -125,7 +123,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-
     background-color: #3e3d3d;
     border-bottom: 1px solid #2d2d2d;
   }
