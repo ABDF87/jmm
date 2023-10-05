@@ -32,7 +32,7 @@ const Contacts = () => {
         'service_lu6duj8',
         'template_c1l2bgg',
         form.current,
-        'Tvjqo-gTCdlJpEI6qET1uM_'
+        'gTCdlJpEI6qET1uM_'
       )
       .then(
         (result) => {
