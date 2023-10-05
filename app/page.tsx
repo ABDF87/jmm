@@ -18,7 +18,6 @@ type MyStateType = number ;
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImageUrl, setSelectedImageUrl] = useState('');
   const [selectedImageId, setSelectedImageId] = useState<MyStateType>(0);
   const [activeImageId, setActiveImageId] = useState<MyStateType>(0);
 

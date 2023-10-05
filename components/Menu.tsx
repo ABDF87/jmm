@@ -52,7 +52,7 @@ const Menu = () => {
         className={styles.deployedMenuContainerMobile}
         onClick={deployMobMenuHandler}
       >
-        <FiMenu style={{ fontSize: '30px', color: 'white' }} />
+        <FiMenu style={{ fontSize: '25px', color: 'white' }} />
         {deployedMenu && (
           <div className={styles.deployedMobMenuContainer}>
             <div
