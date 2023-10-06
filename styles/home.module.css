@@ -15,7 +15,6 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-
 }
 .row {
   display: flex;
@@ -54,34 +53,30 @@
 }
 
 @media (max-width: 768px) {
-    .row{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0;
-    }
-    .imageWrapper {
-        display: flex;
-        overflow: hidden;
-        width: 100%;
-        height: auto;
-        margin-bottom: 1px;
-        
-      }
-      .imageWrapper img{
-        margin-bottom: 1px;
-      }
-      .verticalSplitter{
-        display: none;
-      }
-    .row img{
-        width: 100%;
-      
-    }
+  .row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .imageWrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1px;
+  }
+  .imageWrapper img {
+    margin-bottom: 1px;
+  }
+  .verticalSplitter {
+    display: none;
+  }
+  .row img {
+    width: 100%;
+  }
 
-    .fullscreenRow img {
-        width: 100%;
-        cursor: pointer;
-
-      }
-    
+  .fullscreenRow img {
+    width: 100%;
+    cursor: pointer;
+  }
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Jean-Marc Mazzoni',
   description: 'food photography',
   icons: {
-    icon: '/favicon.ico',
+    icon: 'app/favicon/android-chrome-192x192.png',
   },
 };
 
@@ -23,17 +23,17 @@ export default function RootLayout({
       <head>
         <link
           rel='apple-touch-icon'
-          href='/apple-touch-icon.png'
-          type='image/<generated>'
-          sizes='<generated>'
+          href='/favicon/android-chrome-192x192.png'
+          type='image/png'
+          sizes='192x192'
         />
         <link
           href='https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap'
           rel='stylesheet'
           type='text/css'
-        />
+        /> 
+        
 
-        <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

@@ -16,13 +16,13 @@ const customStyles = {
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
     zIndex: 1000,
     transition: 'all 3s ease',
+
   },
   content: {
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    width: '50%',
     height: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
@@ -30,7 +30,7 @@ const customStyles = {
     padding: '0px',
     border: 'none',
     backgroundColor: 'transparent',
-    size: 'auto',
+   
  
   },
 };
@@ -54,9 +54,12 @@ const button = {
   padding: '20px',
 };
 
-const slideStyles = {
+const slideStyles:any = {
     transition: 'transform 3s ease-in-out',
     backGroundColor: 'orange',
+    objectFit: 'contain',
+    maxWidth: '100%',
+    maxHeight: '100%',
     };
 // Modal.setAppElement('#root'); // Set the root element as the app element
 
