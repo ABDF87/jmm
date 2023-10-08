@@ -10,13 +10,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
- padding-right: 20px;
+  padding-right: 20px;
+  background-color: transparent;
   z-index: 50;
 }
 .mainWrapper {
   display: flex;
   gap: 20px;
-
 }
 .mainTitle {
   display: flex;
@@ -78,7 +78,7 @@
     height: auto;
     margin-right: 100px;
   }
-  .menuContainer{
+  .menuContainer {
     display: none;
   }
   .mainTitle {
@@ -91,7 +91,7 @@
     z-index: 50;
     font-family: 'Nunito Sans', sans-serif;
   }
- 
+
   .deployedMenuContainer {
     display: none;
   }

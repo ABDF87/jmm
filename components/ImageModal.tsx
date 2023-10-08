@@ -7,16 +7,21 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
-  indexImage: number ;
+  indexImage: number;
 }
 type currentIndex = number;
+type photosToLoad = {
+    id: number;
+    src: string;
+    title: string;
+    renderNum: number;
+}[];
 
 const customStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
     zIndex: 1000,
     transition: 'all 3s ease',
-
   },
   content: {
     top: '50%',
@@ -30,12 +35,10 @@ const customStyles = {
     padding: '0px',
     border: 'none',
     backgroundColor: 'transparent',
-   
- 
   },
 };
 
-const buttonsContainer:any = {
+const buttonsContainer: any = {
   position: 'absolute',
   display: 'flex',
   justifyContent: 'space-between',
@@ -54,17 +57,17 @@ const button = {
   padding: '20px',
 };
 
-const slideStyles:any = {
-    transition: 'transform 3s ease-in-out',
-    backGroundColor: 'orange',
-    objectFit: 'contain',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    };
+const slideStyles: any = {
+  transition: 'transform 3s ease-in-out',
+  backGroundColor: 'orange',
+  objectFit: 'contain',
+  maxWidth: '100%',
+  maxHeight: '100%',
+};
 // Modal.setAppElement('#root'); // Set the root element as the app element
 
 const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
-  const [photosToLoad, setPhotosToLoad] = useState<any>([]);
+  const [photosToLoad, setPhotosToLoad] = useState<photosToLoad>([]);
   const [currentIndex, setCurrentIndex] = useState<currentIndex>(indexImage);
   const [activeIndex, setActiveIndex] = useState<currentIndex>(0);
 
@@ -72,7 +75,8 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
 
   useEffect(() => {
     setPhotosToLoad(photos);
-  }, []);
+  }
+    , []);
 
   useEffect(() => {
     if (photosToLoad.length > 0) {
@@ -101,23 +105,22 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
   };
 
   useEffect(() => {
-  const handleKeyPress = (event: any) => {
-    if (event.key === 'ArrowRight') {
-      nextImage();
-    }
-    if (event.key === 'ArrowLeft') {
-      prevImage();
-    }
-  };
-       // Attach the event listener when the component mounts
-       window.addEventListener('keydown', handleKeyPress);
+    const handleKeyPress = (event: any) => {
+      if (event.key === 'ArrowRight') {
+        nextImage();
+      }
+      if (event.key === 'ArrowLeft') {
+        prevImage();
+      }
+    };
+    // Attach the event listener when the component mounts
+    window.addEventListener('keydown', handleKeyPress);
 
-       // Clean up the event listener when the component unmounts
-       return () => {
-         window.removeEventListener('keydown', handleKeyPress);
-       };
-     }, [currentIndex]); 
-    
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [currentIndex]);
 
   return (
     <Modal
@@ -134,13 +137,12 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
           <AiOutlineRight />
         </div>
       </div>
-   
-          <img
-            src={photosToLoad[currentIndex]?.src}
-            alt={`Image ${currentIndex + 1}`}
-            style={slideStyles}
-          />
- 
+
+      <img
+        src={photosToLoad[currentIndex]?.src}
+        alt={`Image ${currentIndex + 1}`}
+        style={slideStyles}
+      />
     </Modal>
   );
 };

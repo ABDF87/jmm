@@ -1,15 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
 
-interface photo {
+interface photos {
   id: number;
   renderNum: number;
   title: string;
-  title2?: string;
   src: string;
-  src2?: string;
 }
 
-const photos: photo[] = [
+const photos: photos[] = [
   {
     id: 0,
     renderNum: 2,
@@ -36,7 +34,7 @@ const photos: photo[] = [
     src: '/photo/heirloon_tomatoo_1_i.jpg',
   },
   {
-    id:4,
+    id: 4,
     renderNum: 2,
     title: 'Paprica',
     src: '/photo/bell-pepper_1_i.jpg',
@@ -45,7 +43,7 @@ const photos: photo[] = [
     id: 5,
     renderNum: 1,
     title: 'Mezze',
-    src: '/photo/mezze_1_1_i.jpg',
+    src: '/photo/L1000986_PS_edit 1.jpg',
   },
   {
     id: 6,
@@ -70,6 +68,12 @@ const photos: photo[] = [
     renderNum: 2,
     title: 'Pate',
     src: '/photo/pate_1_i.jpg',
+  },
+  {
+    id: 110,
+    renderNum: 0,
+    title: '',
+    src: '/photo/heirloon_tomatoo_1_i.jpg',
   },
   {
     id: 10,
@@ -108,10 +112,16 @@ const photos: photo[] = [
     src: '/photo/fruits_1_i.jpg',
   },
   {
-    id:16,
+    id: 116,
     renderNum: 2,
-    title: 'Creme brulee',
-    src: '/photo/creme-brulee_1_i.jpg',
+    title: 'Peaches',
+    src: '/photo/peaches_1_i.jpg',
+  },
+  {
+    id: 16,
+    renderNum: 2,
+    title: 'Pomegranate',
+    src: '/photo/pomogranate_2_i.jpg',
   },
   {
     id: 17,
@@ -150,7 +160,7 @@ const photos: photo[] = [
     src: '/photo/clams_with_linguini_1_i.jpg',
   },
   {
-    id:23,
+    id: 23,
     renderNum: 1,
     title: 'Hamburger',
     src: '/photo/hamburger_1_i.jpg',
@@ -217,12 +227,24 @@ const photos: photo[] = [
   },
   {
     id: 35,
+    renderNum: 2,
+    title: 'fright eggs',
+    src: '/photo/frisee_aux_lardons_1_i.jpg',
+  },
+  {
+    id: 36,
+    renderNum: 2,
+    title: 'Teriyaki chiken ',
+    src: '/photo/teriyaki_chicken_i.jpg',
+  },
+  {
+    id: 37,
     title: 'Asparagus',
     renderNum: 2,
     src: '/photo/asparagus_1_i.jpg',
   },
   {
-    id: 36,
+    id: 38,
     renderNum: 2,
     title: 'Sushi',
     src: '/photo/sushi-veggie_1_i.jpeg',

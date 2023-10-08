@@ -1,0 +1,96 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #eae8e8;
+}
+.myPhotosContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  width: 80%;
+  height: 100%;
+  color: #fff;
+}
+
+.myPhotosTitle {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #1f1f1f;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #4d4b4b;
+}
+.addPhotoButton {
+    padding: 5px 10px;
+    border: 1px solid #4d4b4b;
+  color: #0a0909;
+  font-size: 12px;
+}
+
+.myPhotosList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.myPhotoItem {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 3px;
+  border-radius: 3px;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+}
+
+.myPhotoItem div {
+  width: 25%;
+  color: #000;
+}
+.myPhotoItemImgInRow {
+  color: #fff;
+}
+.myPhotoItemImage {
+  width: 100px;
+  height: auto;
+  overflow: hidden;
+}
+
+.myPhotoItemImage img {
+  width: 100px;
+  height: 50px;
+  object-fit: cover;
+}
+.myPhotoItemButtons {
+  display: flex;
+  justify-content: end;
+  size: 20px;
+}
+
+.myPhotoItemButton {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}

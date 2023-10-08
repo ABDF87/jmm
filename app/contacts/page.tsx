@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from '../../styles/contacts.module.css';
+import styles from '../styles/contacts.module.css';
 import Footer from '@/components/Footer';
 import Title from '@/components/Title';
 import { BsInstagram } from 'react-icons/bs';
