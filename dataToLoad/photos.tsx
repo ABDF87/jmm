@@ -10,6 +10,12 @@ interface photos {
 const photos: photos[] = [
   {
     id: 0,
+    renderNum: 1,
+    title: 'Roasted Chicken',
+    src: '/photo/L1010245 PS_photo.jpg',
+  },
+  {
+    id: 0,
     renderNum: 2,
     title: 'Roasted Chicken',
     src: '/photo/roasted-chicken-potatoes_1_i.jpg',
@@ -43,7 +49,7 @@ const photos: photos[] = [
     id: 5,
     renderNum: 1,
     title: 'Mezze',
-    src: '/photo/L1000986_PS_edit 1.jpg',
+    src: '/photo/L1000986_PS_edit last.jpg',
   },
   {
     id: 6,

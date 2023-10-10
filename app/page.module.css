@@ -1,74 +1,81 @@
 .mainContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    overflow: scroll;
-    background-image: url('/photo/heirloon_tomatoo_1_i.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .emptyBox {
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
-    z-index: 2;
-  }
-  .card {
-    overflow: hidden;
-    height: auto;
-  }
-  .card img:hover {
-    transform: scale(1.2);
-    transition: transform 3s;
-    cursor: pointer;
-  }
-  
-  .card1 {
-    width: 100%;
-    height: auto;
-  }
-  .card1 img {
-    width: 100%;
-    height: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  background-image: url('/photo/heirloon_tomatoo_1_i.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.emptyBox {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  z-index: 2;
+}
+.card {
+  overflow: hidden;
+  height: auto;
+}
+.card img:hover {
+  cursor: pointer;
+}
+
+.card1 {
+  width: 100%;
+  height: auto;
+}
+.card1 img {
+  width: 100%;
+  height: auto;
+}
+.card2 {
+  display: flex;
+  width: 49.9%;
+  height: auto;
+  margin-bottom: 2px;
+}
+
+.card2 img {
+  width: 100%;
+  height: auto;
+}
+
+.card2 img:hover {
+  transform: scale(1.2);
+  transition: transform 3s;
+}
+.card3 {
+  width: 33.2%;
+  height: auto;
+  margin-bottom: 2px;
+  transform: scale(1.2);
+  transition: transform 3s;
+}
+
+.card3 img {
+  width: 100%;
+  height: auto;
+}
+.card2 img:hover {
+  transform: scale(1.2);
+  transition: transform 3s;
+}
+
+@media (max-width: 768px) {
   .card2 {
-    display: flex;
-    width: 49.9%;
-    height: auto;
-    margin-bottom: 2px;
-  }
-  
-  .card2 img {
     width: 100%;
-    height: auto;
   }
   .card3 {
-    width: 33.2%;
-    height: auto;
-    margin-bottom: 2px;
-  }
-  
-  .card3 img {
     width: 100%;
-    height: auto;
   }
-  
-  @media (max-width: 768px) {
-    .card2 {
-      width: 100%;
-    }
-    .card3 {
-      width: 100%;
-    }
-    
-  }
-  
+}

@@ -6,16 +6,6 @@ import Title from '../components/Title';
 import ImageModal from '@/components/ImageModal';
 import photosToLoad from '../dataToLoad/photos';
 
-type photo = {
-  id: string;
-  renderNum: number;
-  title1: string;
-  title2?: string;
-  src1: string;
-  src2?: string;
-};
-type MyStateType = number;
-
 interface photos {
   id: number;
   renderNum: number;
@@ -25,8 +15,8 @@ interface photos {
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImageId, setSelectedImageId] = useState<MyStateType>(0);
-  const [activeImageId, setActiveImageId] = useState<MyStateType>(0);
+  const [selectedImageId, setSelectedImageId] = useState<number>(0);
+  const [activeImageId, setActiveImageId] = useState<number>(0);
 
   const photos: photos[] = photosToLoad;
 
