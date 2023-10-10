@@ -1,18 +1,18 @@
-// 'use client';
-// import React, { useState, useEffect, use } from 'react';
-// import styles from '../../styles/admin.module.css';
-// import photos from '../../../dataToLoad/photos';
-// import { AiFillEdit } from 'react-icons/ai';
-// import { AiOutlineDelete } from 'react-icons/ai';
+'use client';
+import React, { useState, useEffect, use } from 'react';
+import styles from '../../styles/admin.module.css';
+import photos from '../../../dataToLoad/photos';
+import { AiFillEdit } from 'react-icons/ai';
+import { AiOutlineDelete } from 'react-icons/ai';
 
-// const buttonsStyles = {
-//   fontSize: '25px',
-//   color: 'white',
-// };
+const buttonsStyles = {
+  fontSize: '25px',
+  color: 'white',
+};
 
-// const Admin = () => {
-//   const [photosToRender, setPhotosToRender] = useState<any>([]);
-//   const [refresh, setRefresh] = useState(false);
+const Admin = () => {
+  const [photosToRender, setPhotosToRender] = useState<any>([]);
+  const [refresh, setRefresh] = useState(false);
 
 //   useEffect(() => {
 //     setPhotosToRender(photos);
@@ -66,6 +66,6 @@
 //       <div className={styles.uploadPhotoContainer}></div>
 //     </main>
 //   );
-// };
+};
 
-// export default Admin;
+export default Admin;
