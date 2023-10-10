@@ -40,10 +40,10 @@ const Home = () => {
         <Title />
         {photos.map((item: any, itemIndex: number) => {
           if (item.renderNum === 0) {
-            return <div className={styles.emptyBox}></div>;
+            return <div key={itemIndex} className={styles.emptyBox}></div>;
           } else if (item.renderNum === 1) {
             return (
-              <div className={`${styles.card} ${styles.card1}`}>
+              <div key={itemIndex} className={`${styles.card} ${styles.card1}`}>
                 <img
                   src={item.src}
                   alt='photo'
@@ -53,7 +53,7 @@ const Home = () => {
             );
           } else if (item.renderNum === 2) {
             return (
-              <div className={`${styles.card} ${styles.card2}`}>
+              <div key={itemIndex} className={`${styles.card} ${styles.card2}`}>
                 {' '}
                 <img
                   src={item.src}
@@ -64,7 +64,7 @@ const Home = () => {
             );
           } else if (item.renderNum === 3) {
             return (
-              <div className={`${styles.card} ${styles.card3}`}>
+              <div key={itemIndex} className={`${styles.card} ${styles.card3}`}>
                 {' '}
                 <img
                   src={item.src}
