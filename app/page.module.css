@@ -23,6 +23,7 @@
   z-index: 2;
 }
 .card {
+  width:auto;
   overflow: hidden;
   height: auto;
 }
@@ -58,15 +59,13 @@
   width: 33.2%;
   height: auto;
   margin-bottom: 2px;
-  transform: scale(1.2);
-  transition: transform 3s;
 }
 
 .card3 img {
   width: 100%;
   height: auto;
 }
-.card2 img:hover {
+.card3 img:hover {
   transform: scale(1.2);
   transition: transform 3s;
 }
