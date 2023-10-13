@@ -1,14 +1,4 @@
-.mainContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  overflow: scroll;
-  background-image: url('/photo/L1010311 PS_edit.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
 
 .grid {
   display: flex;

@@ -4,8 +4,6 @@ import styles from './page.module.css';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
 import ImageModal from '@/components/ImageModal';
-import photosToLoad from '../dataToLoad/photos';
-import { it } from 'node:test';
 
 interface photos {
   id: number;
@@ -20,20 +18,24 @@ const Home = () => {
   const [activeImageId, setActiveImageId] = useState<number>(0);
   const [readyPhotos, setReadyPhotos] = useState<photos[]>([]);
   const [photosToLoad, setPhotosToLoad] = useState<photos[]>([]);
+  const [backgroundPhoto, setBackgroundPhoto] = useState<string>('');
 
   useEffect(() => {
-    const test = async () => {
+    const dataFetch = async () => {
       try {
         const res = await fetch(
           'https://jmm-starpi.onrender.com/api/photos/?populate=*'
         );
 
         const data = await res.json();
-     
-        const backgroundPhoto = data.data.filter(
-          (photoItem: any) =>
-            photoItem.attributes.number_in_order === 'background'
-        );
+
+        data.data.filter((photoItem: any) => {
+          if (photoItem.attributes.number_in_order === 'background') {
+            console.log(photoItem.attributes.src.data.attributes.url);
+            setBackgroundPhoto(photoItem.attributes.src.data.attributes.url);
+          }
+        });
+
         const filteredData = data.data.filter((el: any) => {
           return el.attributes.number_in_order !== 'background';
         });
@@ -62,14 +64,12 @@ const Home = () => {
       }
     };
 
-    test();
+    dataFetch();
   }, []);
 
   useEffect(() => {
     setPhotosToLoad(readyPhotos);
   }, [readyPhotos]);
-
-  const photos: photos[] = photosToLoad;
 
   const openModal = (imageIndex: number) => {
     setSelectedImageId(imageIndex);
@@ -83,10 +83,24 @@ const Home = () => {
     setSelectedImageId(0);
     setIsModalOpen(false);
   };
-
+ 
+  
+  const mainStyles: any = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100vh',
+    overflow: 'scroll',
+    backgroundImage: `url(${backgroundPhoto})`,
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
 
   return (
-    <main className={styles.mainContainer}>
+    <main
+      style={mainStyles}
+    >
       <div className={styles.grid}>
         <Title />
         {photosToLoad.map((item: any, itemIndex: number) => {
@@ -97,7 +111,6 @@ const Home = () => {
               <div key={itemIndex} className={`${styles.card} ${styles.card1}`}>
                 <img
                   src={item.src}
-          
                   alt='photo'
                   onClick={() => openModal(itemIndex)}
                 />
