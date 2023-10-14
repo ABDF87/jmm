@@ -67,4 +67,8 @@
   .card3 {
     width: 100%;
   }
+
+  .emptyBox{
+    display: none;
+  }
 }
