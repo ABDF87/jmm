@@ -24,7 +24,8 @@ const Home = () => {
     const dataFetch = async () => {
       try {
         const res = await fetch(
-          'https://jmm-starpi.onrender.com/api/photos/?populate=*'
+          'https://jmmazzoni-site-backend.onrender.com/api/photos/?populate=*'
+          
         );
 
         const data = await res.json();
