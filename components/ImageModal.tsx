@@ -48,12 +48,16 @@ const buttonsContainer: any = {
   border: 'none',
   cursor: 'pointer',
 };
-const button = {
+const arrowWrapper: any = {
+  width: '50px',
+  height: '50px',
+  backgroundColor: 'red',
+};
+
+const focusedButton = {
   border: 'none',
   cursor: 'pointer',
-  color: 'white',
-  fontSize: '30px',
-  padding: '20px',
+  color: 'red',
 };
 
 const slideStyles: any = {
@@ -73,9 +77,25 @@ const ImageModal = ({
   const [photosToLoad, setPhotosToLoad] = useState<photosToLoad>([]);
   const [currentIndex, setCurrentIndex] = useState<currentIndex>(indexImage);
   const [activeIndex, setActiveIndex] = useState<currentIndex>(0);
+  const [leftArrowColor, setLeftArrowColor] = useState<string>('grey');
+  const [rightArrowColor, setRightArrowColor] = useState<string>('grey');
 
   //   Modal.setAppElement('#root')
 
+  const arrowLeft = {
+    border: 'none',
+    cursor: 'pointer',
+    color: leftArrowColor,
+    fontSize: '30px',
+    padding: '20px',
+  };
+  const arrowRight = {
+    border: 'none',
+    cursor: 'pointer',
+    color: rightArrowColor,
+    fontSize: '30px',
+    padding: '20px',
+  };
   useEffect(() => {
     setPhotosToLoad(photos);
   }, []);
@@ -83,7 +103,6 @@ const ImageModal = ({
   useEffect(() => {
     setCurrentIndex(indexImage);
   }, [indexImage]);
-
 
   const prevImage = () => {
     setCurrentIndex((prevIndex) =>
@@ -126,10 +145,21 @@ const ImageModal = ({
       contentLabel='Image Modal'
     >
       <div style={buttonsContainer}>
-        <div onClick={prevImage} style={button}>
+        <div
+          onClick={prevImage}
+          style={arrowLeft}
+          onMouseEnter={() => setLeftArrowColor('white')}
+          onMouseLeave={() => setLeftArrowColor('grey')}
+        >
           <AiOutlineLeft />
         </div>
-        <div onClick={nextImage} style={button}>
+
+        <div
+          onClick={nextImage}
+          style={arrowRight}
+          onMouseEnter={() => setRightArrowColor('white')}
+          onMouseLeave={() => setRightArrowColor('grey')}
+        >
           <AiOutlineRight />
         </div>
       </div>

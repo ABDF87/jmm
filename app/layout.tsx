@@ -22,6 +22,7 @@ export default function RootLayout({
           rel='stylesheet'
           type='text/css'
         /> 
+        <link rel="icon" href="/favicon.ico"></link>
         
 
       </head>
