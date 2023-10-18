@@ -1,20 +1,19 @@
 import React, { useState, useEffect, use } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
-import photos from '../dataToLoad/photos';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
   indexImage: number;
+  photos: any;
 }
 type currentIndex = number;
 type photosToLoad = {
-    id: number;
-    src: string;
-    title: string;
-    renderNum: number;
+  id: number;
+  src: string;
+  title: string;
+  renderNum: number;
 }[];
 
 const customStyles = {
@@ -65,7 +64,12 @@ const slideStyles: any = {
 };
 // Modal.setAppElement('#root'); // Set the root element as the app element
 
-const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
+const ImageModal = ({
+  isOpen,
+  onClose,
+  indexImage,
+  photos,
+}: ImageModalProps) => {
   const [photosToLoad, setPhotosToLoad] = useState<photosToLoad>([]);
   const [currentIndex, setCurrentIndex] = useState<currentIndex>(indexImage);
   const [activeIndex, setActiveIndex] = useState<currentIndex>(0);
@@ -74,32 +78,22 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
 
   useEffect(() => {
     setPhotosToLoad(photos);
-  }
-    , []);
+  }, []);
 
   useEffect(() => {
-    if (photosToLoad.length > 0) {
-      photosToLoad.map((photo: any, index: number) => {
-        if (index === indexImage) {
-          setCurrentIndex(index);
-        }
-      });
-    }
+    setCurrentIndex(indexImage);
   }, [indexImage]);
 
-  useEffect(() => {
-    setActiveIndex(currentIndex);
-  }, [currentIndex]);
 
   const prevImage = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : photosToLoad.length - 1
+      prevIndex > 0 ? prevIndex - 1 : photos.length - 1
     );
   };
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex < photosToLoad.length - 1 ? prevIndex + 1 : 0
+      prevIndex < photos.length - 1 ? prevIndex + 1 : 0
     );
   };
 
@@ -121,6 +115,9 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
     };
   }, [currentIndex]);
 
+  console.log('currentIndex', currentIndex);
+  console.log('photosToLoad', photos);
+
   return (
     <Modal
       isOpen={isOpen}
@@ -138,7 +135,7 @@ const ImageModal = ({ isOpen, onClose, indexImage }: ImageModalProps) => {
       </div>
 
       <img
-        src={photosToLoad[currentIndex]?.src}
+        src={photos[currentIndex]?.src}
         alt={`Image ${currentIndex + 1}`}
         style={slideStyles}
       />

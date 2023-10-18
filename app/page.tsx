@@ -76,6 +76,8 @@ const Home = () => {
     setSelectedImageId(imageIndex);
     setIsModalOpen(true);
   };
+
+
   useEffect(() => {
     setActiveImageId(selectedImageId);
   }, [selectedImageId]);
@@ -114,6 +116,7 @@ const Home = () => {
                   src={item.src}
                   alt='photo'
                   onClick={() => openModal(itemIndex)}
+              
                 />
               </div>
             );
@@ -124,6 +127,7 @@ const Home = () => {
                   src={item.src}
                   alt='photo'
                   onClick={() => openModal(itemIndex)}
+                
                 />
               </div>
             );
@@ -135,6 +139,7 @@ const Home = () => {
                   src={item.src}
                   alt='photo'
                   onClick={() => openModal(itemIndex)}
+               
                 />
               </div>
             );
@@ -145,6 +150,7 @@ const Home = () => {
         isOpen={isModalOpen}
         onClose={closeModal}
         indexImage={activeImageId}
+        photos={photosToLoad}
       />
       <Footer />
     </main>
