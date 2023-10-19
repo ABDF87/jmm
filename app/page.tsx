@@ -18,14 +18,41 @@ const Home = () => {
   const [activeImageId, setActiveImageId] = useState<number>(0);
   const [readyPhotos, setReadyPhotos] = useState<photos[]>([]);
   const [photosToLoad, setPhotosToLoad] = useState<photos[]>([]);
+  const [backgroundColorStatus, setBackgroundColorStatus] =
+    useState<boolean>(false);
   const [backgroundPhoto, setBackgroundPhoto] = useState<string>('');
+  const [backgroundColor, setBackgroundColor] = useState<string>('504e4e');
+  const [screenWidth, setScreenWidth] = useState<number>(
+    window.screen.availWidth
+  );
+  const [screenHeight, setScreenHeight] = useState<number>(
+    window.screen.availHeight
+  );
+
+  //detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.screen.availWidth);
+      setScreenHeight(window.screen.availHeight);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    console.log(screenWidth, 'screenWidth');
+    if (screenWidth < 600) {
+      setBackgroundColorStatus(true);
+    } else {
+      setBackgroundColorStatus(false);
+    }
+  }, [screenWidth]);
 
   useEffect(() => {
     const dataFetch = async () => {
       try {
         const res = await fetch(
           'https://jmmazzoni-site-backend.onrender.com/api/photos/?populate=*'
-          
         );
 
         const data = await res.json();
@@ -77,7 +104,6 @@ const Home = () => {
     setIsModalOpen(true);
   };
 
-
   useEffect(() => {
     setActiveImageId(selectedImageId);
   }, [selectedImageId]);
@@ -86,9 +112,8 @@ const Home = () => {
     setSelectedImageId(0);
     setIsModalOpen(false);
   };
- 
-  
-  const mainStyles: any = {
+
+  const mainStylesImageBack: any = {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -99,10 +124,22 @@ const Home = () => {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
   };
+  const mainStylesColorBack: any = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100vh',
+    overflow: 'scroll',
+    backgroundColor: 'grey',
+    backgroundSize: '100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
+
 
   return (
     <main
-      style={mainStyles}
+      style={backgroundColorStatus ? mainStylesColorBack : mainStylesImageBack}
     >
       <div className={styles.grid}>
         <Title />
@@ -116,7 +153,6 @@ const Home = () => {
                   src={item.src}
                   alt='photo'
                   onClick={() => openModal(itemIndex)}
-              
                 />
               </div>
             );
@@ -127,19 +163,17 @@ const Home = () => {
                   src={item.src}
                   alt='photo'
                   onClick={() => openModal(itemIndex)}
-                
                 />
               </div>
             );
           } else if (item.renderNum === 3) {
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card3}`}>
-                {' '}
+    
                 <img
                   src={item.src}
                   alt='photo'
                   onClick={() => openModal(itemIndex)}
-               
                 />
               </div>
             );

@@ -26,7 +26,7 @@ const customStyles = {
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    width: '70%',
+    width: '80%',
     height: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
@@ -48,21 +48,11 @@ const buttonsContainer: any = {
   border: 'none',
   cursor: 'pointer',
 };
-const arrowWrapper: any = {
-  width: '50px',
-  height: '50px',
-  backgroundColor: 'red',
-};
 
-const focusedButton = {
-  border: 'none',
-  cursor: 'pointer',
-  color: 'red',
-};
 
 const slideStyles: any = {
   transition: 'transform 3s ease-in-out',
-  objectFit: 'contain',
+  objectFit: 'fill',
   maxWidth: '100%',
   maxHeight: '100%',
 };
@@ -134,8 +124,7 @@ const ImageModal = ({
     };
   }, [currentIndex]);
 
-  console.log('currentIndex', currentIndex);
-  console.log('photosToLoad', photos);
+
 
   return (
     <Modal
