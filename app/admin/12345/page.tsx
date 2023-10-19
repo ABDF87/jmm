@@ -21,7 +21,6 @@ const Admin = () => {
 //   const deletePhotoItem = (photoToDeleteIndex: number) => {
 //     photosToRender.map((photo: any, index: number) => {
 //       if (index === photoToDeleteIndex) {
-//         console.log('photoToDeleteIndex', index, photoToDeleteIndex);
 //         index === photoToDeleteIndex && photosToRender.splice(index, 1);
 //         setRefresh(!refresh);
 //       }

@@ -59,7 +59,6 @@ const Home = () => {
 
         data.data.filter((photoItem: any) => {
           if (photoItem.attributes.number_in_order === 'background') {
-            console.log(photoItem.attributes.src.data.attributes.url);
             setBackgroundPhoto(photoItem.attributes.src.data.attributes.url);
           }
         });
@@ -131,9 +130,6 @@ const Home = () => {
     height: '100vh',
     overflow: 'scroll',
     backgroundColor: 'grey',
-    backgroundSize: '100%',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
   };
 
 

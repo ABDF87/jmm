@@ -17,7 +17,6 @@ const Title = () => {
 
   useEffect(() => {
     setActivePage(pathName);
-    console.log(pathName);
   }, [pathName]);
 
   return (

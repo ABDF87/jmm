@@ -36,7 +36,6 @@ const Contacts = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           setMessageSent(true);
           setName('');
           setEmail('');
