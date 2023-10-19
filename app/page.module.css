@@ -65,6 +65,13 @@
   transition: transform 3s;
 }
 
+@media (max-width: 830px) {
+
+  .emptyBox{
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
 
   .grid{
