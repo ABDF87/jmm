@@ -42,7 +42,7 @@ const Menu = () => {
               : styles.menuItem
           }
         >
-          <Link href='/contacts'>Contacts</Link>
+          <Link href='/contacts'>Contact</Link>
         </div>
       </div>
      

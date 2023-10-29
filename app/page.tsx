@@ -3,7 +3,11 @@ import React, { useState, useEffect, use } from 'react';
 import styles from './page.module.css';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
-import ImageModal from '@/components/ImageModal';
+import dynamic from 'next/dynamic'
+
+const DynamicHeader = dynamic(() => import('../components/ImageModal'), {
+  ssr: false,
+})
 
 interface photos {
   id: number;
@@ -22,31 +26,31 @@ const Home = () => {
     useState<boolean>(false);
   const [backgroundPhoto, setBackgroundPhoto] = useState<string>('');
   const [backgroundColor, setBackgroundColor] = useState<string>('504e4e');
-  const [screenWidth, setScreenWidth] = useState<number>(
-    window.screen.availWidth
-  );
-  const [screenHeight, setScreenHeight] = useState<number>(
-    window.screen.availHeight
-  );
+  // const [screenWidth, setScreenWidth] = useState<number>(
+  //   window.screen.availWidth
+  // );
+  // const [screenHeight, setScreenHeight] = useState<number>(
+  //   window.screen.availHeight
+  // );
 
   //detect screen size
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.screen.availWidth);
-      setScreenHeight(window.screen.availHeight);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setScreenWidth(window.screen.availWidth);
+  //     setScreenHeight(window.screen.availHeight);
+  //   };
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
-  useEffect(() => {
-    console.log(screenWidth, 'screenWidth');
-    if (screenWidth < 600) {
-      setBackgroundColorStatus(true);
-    } else {
-      setBackgroundColorStatus(false);
-    }
-  }, [screenWidth]);
+  // useEffect(() => {
+  //   console.log(screenWidth, 'screenWidth');
+  //   if (screenWidth < 600) {
+  //     setBackgroundColorStatus(true);
+  //   } else {
+  //     setBackgroundColorStatus(false);
+  //   }
+  // }, [screenWidth]);
 
   useEffect(() => {
     const dataFetch = async () => {
@@ -176,7 +180,7 @@ const Home = () => {
           }
         })}
       </div>
-      <ImageModal
+      <DynamicHeader
         isOpen={isModalOpen}
         onClose={closeModal}
         indexImage={activeImageId}
