@@ -37,12 +37,12 @@ const Menu = () => {
         </div>
         <div
           className={
-            activePage === '/contacts'
+            activePage === '/contact'
               ? styles.activeMenuItemWhite
               : styles.menuItem
           }
         >
-          <Link href='/contacts'>Contact</Link>
+          <Link href='/contact'>Contact</Link>
         </div>
       </div>
      
