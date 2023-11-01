@@ -3,11 +3,12 @@ import React, { useState, useEffect, use } from 'react';
 import styles from './page.module.css';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 const DynamicHeader = dynamic(() => import('../components/ImageModal'), {
   ssr: false,
-})
+});
 
 interface photos {
   id: number;
@@ -25,32 +26,6 @@ const Home = () => {
   const [backgroundColorStatus, setBackgroundColorStatus] =
     useState<boolean>(false);
   const [backgroundPhoto, setBackgroundPhoto] = useState<string>('');
-  const [backgroundColor, setBackgroundColor] = useState<string>('504e4e');
-  // const [screenWidth, setScreenWidth] = useState<number>(
-  //   window.screen.availWidth
-  // );
-  // const [screenHeight, setScreenHeight] = useState<number>(
-  //   window.screen.availHeight
-  // );
-
-  //detect screen size
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setScreenWidth(window.screen.availWidth);
-  //     setScreenHeight(window.screen.availHeight);
-  //   };
-  //   window.addEventListener('resize', handleResize);
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(screenWidth, 'screenWidth');
-  //   if (screenWidth < 600) {
-  //     setBackgroundColorStatus(true);
-  //   } else {
-  //     setBackgroundColorStatus(false);
-  //   }
-  // }, [screenWidth]);
 
   useEffect(() => {
     const dataFetch = async () => {
@@ -60,6 +35,7 @@ const Home = () => {
         );
 
         const data = await res.json();
+        console.log('data', data);
 
         data.data.filter((photoItem: any) => {
           if (photoItem.attributes.number_in_order === 'background') {
@@ -136,7 +112,6 @@ const Home = () => {
     backgroundColor: 'grey',
   };
 
-
   return (
     <main
       style={backgroundColorStatus ? mainStylesColorBack : mainStylesImageBack}
@@ -149,9 +124,12 @@ const Home = () => {
           } else if (item.renderNum === 1) {
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card1}`}>
-                <img
+               
+                <Image
+                  alt={item.title}
                   src={item.src}
-                  alt='photo'
+                  width={1000}
+                  height={1000}
                   onClick={() => openModal(itemIndex)}
                 />
               </div>
@@ -159,9 +137,13 @@ const Home = () => {
           } else if (item.renderNum === 2) {
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card2}`}>
-                <img
+             
+                <Image
+                  alt={item.title}
                   src={item.src}
-                  alt='photo'
+                  width={1000}
+                  height={1000}
+                  loading='eager'
                   onClick={() => openModal(itemIndex)}
                 />
               </div>
@@ -169,10 +151,13 @@ const Home = () => {
           } else if (item.renderNum === 3) {
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card3}`}>
-    
-                <img
+             
+                <Image
+                  alt={item.title}
                   src={item.src}
-                  alt='photo'
+                  width={1000}
+                  height={1000}
+                  loading='eager'
                   onClick={() => openModal(itemIndex)}
                 />
               </div>

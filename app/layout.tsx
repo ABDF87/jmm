@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Jean-Marc Mazzoni',
-  description: 'food photography',
+  title: 'Jean-Marc Mazzoni - Food photographer',
+  description: 'Food photography portfolio',
 };
 
 export default function RootLayout({

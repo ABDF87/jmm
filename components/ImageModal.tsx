@@ -1,7 +1,7 @@
 import React, { useState, useEffect, use } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
-
+import Image from 'next/image';
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -48,7 +48,6 @@ const buttonsContainer: any = {
   border: 'none',
   cursor: 'pointer',
 };
-
 
 const slideStyles: any = {
   transition: 'transform 3s ease-in-out',
@@ -124,8 +123,6 @@ const ImageModal = ({
     };
   }, [currentIndex]);
 
-
-
   return (
     <Modal
       isOpen={isOpen}
@@ -153,11 +150,11 @@ const ImageModal = ({
         </div>
       </div>
 
-      <img
+       <img
         src={photos[currentIndex]?.src}
         alt={`Image ${currentIndex + 1}`}
         style={slideStyles}
-      />
+      /> 
     </Modal>
   );
 };

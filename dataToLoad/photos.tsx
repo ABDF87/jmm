@@ -11,13 +11,13 @@ const photos: photos[] = [
   {
     id: 0,
     renderNum: 1,
-    title: 'Roasted Chicken',
+    title: 'Food photo - Roasted Chicken',
     src: '/photo/L1010245 PS_photo.jpg',
   },
   {
     id: 0,
     renderNum: 2,
-    title: 'Roasted Chicken',
+    title: 'Food photo - Roasted Chicken',
     src: '/photo/roasted-chicken-potatoes_1_i.jpg',
   },
   {
