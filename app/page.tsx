@@ -131,7 +131,7 @@ const Home = () => {
                   width={1000}
                   height={1000}
                   onClick={() => openModal(itemIndex)}
-                  loading='lazy'
+                  loading='eager'
                 />
               </div>
             );
@@ -144,7 +144,7 @@ const Home = () => {
                   src={item.src}
                   width={1000}
                   height={1000}
-                  loading='lazy'
+                  loading='eager'
                   onClick={() => openModal(itemIndex)}
                 />
               </div>
@@ -158,7 +158,7 @@ const Home = () => {
                   src={item.src}
                   width={1000}
                   height={1000}
-                  loading='lazy'
+                  loading='eager'
                   onClick={() => openModal(itemIndex)}
                 />
               </div>
