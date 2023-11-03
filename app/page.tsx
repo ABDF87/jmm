@@ -119,6 +119,7 @@ const Home = () => {
       <div className={styles.grid}>
         <Title />
         {photosToLoad.map((item: any, itemIndex: number) => {
+          console.log('alt', item.title)
           if (item.renderNum === 0) {
             return <div key={itemIndex} className={styles.emptyBox}></div>;
           } else if (item.renderNum === 1) {

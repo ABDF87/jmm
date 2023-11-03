@@ -71,16 +71,16 @@ const Title = () => {
             </div>
             <div
               className={
-                activePage === '/contacts'
+                activePage === '/contact'
                   ? styles.activeMobMenuItem
                   : styles.mobMenuItem
               }
               onClick={() => {
-                router.push('/contacts');
+                router.push('/contact');
               }}
             >
               {' '}
-              <p>Contacts</p>
+              <p>Contact</p>
             </div>
           </div>
         )}
