@@ -23,7 +23,7 @@
 .instaFormWrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   width: 40%;
   margin-bottom: 40px;
   font-size: 14px;
@@ -34,7 +34,16 @@
 .instagramContainer {
   display: flex;
   justify-content: start;
-  gap: 1em;
+  gap: 0.5em;
+  width: 100%;
+  font-size: 14px;
+  color: #fff;
+}
+.facebookContainer{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5em;
   width: 100%;
   font-size: 14px;
   color: #fff;

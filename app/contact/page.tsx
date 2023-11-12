@@ -5,13 +5,19 @@ import styles from '../styles/contacts.module.css';
 import Footer from '@/components/Footer';
 import Title from '@/components/Title';
 import { BsInstagram } from 'react-icons/bs';
+import {AiOutlineFacebook} from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-const iconStyle = {
+const iconStyleInsta = {
   color: 'yellow',
   fontSize: '33px',
+  cursor: 'pointer',
+};
+const iconStyleFB = {
+  color: 'yellow',
+  fontSize: '40px',
   cursor: 'pointer',
 };
 
@@ -56,7 +62,7 @@ const Contacts = () => {
         <div className={styles.instaFormWrapper}>
           <div className={styles.instagramContainer}>
             <BsInstagram
-              style={iconStyle}
+              style={iconStyleInsta}
               onClick={() => {
                 router.push('https://www.instagram.com/jmmazzoni/');
               }}
@@ -71,6 +77,24 @@ const Contacts = () => {
                 instagram.com/jmmazzoni
               </p>
               <p> ​@jmmatelier</p>
+            </div>
+          </div>
+          <div className={styles.facebookContainer}>
+            <AiOutlineFacebook style={iconStyleFB}
+            onClick={() => {
+                router.push('https://www.facebook.com/MazzoniStudio/');
+              }} />
+            <div className={styles.facebookLinks}>
+              <p
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  router.push('https://www.facebook.com/MazzoniStudio/');
+                }
+              }
+              >
+                facebook.com/MazzoniStudio
+              </p>
+
             </div>
           </div>
          
