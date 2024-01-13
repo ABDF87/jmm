@@ -4,6 +4,7 @@ import styles from '../styles/about.module.css';
 import Footer from '@/components/Footer';
 import Title from '@/components/Title';
 
+
 const About = () => {
   return (
     <div className={styles.mainContainer}>

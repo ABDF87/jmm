@@ -71,6 +71,14 @@ const ImageModal = ({
 
   //   Modal.setAppElement('#root')
 
+
+
+
+
+  photos = photos.filter((photo: any) => photo.title !== 'Gap');
+
+
+  console.log('photos', photos);
   const arrowLeft = {
     border: 'none',
     cursor: 'pointer',
@@ -150,11 +158,11 @@ const ImageModal = ({
         </div>
       </div>
 
-       <img
+      <img
         src={photos[currentIndex]?.src}
         alt={`Image ${currentIndex + 1}`}
         style={slideStyles}
-      /> 
+      />
     </Modal>
   );
 };
