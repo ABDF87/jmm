@@ -21,7 +21,7 @@ const About = () => {
             impressionist and realist tradition. Besides this I continue to
             practice many aspect of photography: portraits, pet portraits,
             street photography, nature, B&W. I also continue to paint and
-            sculpt.
+            sculpt. Additionally, I speak English, French and Russian.
           </p>
 
           <br />
