@@ -4,7 +4,6 @@ import styles from '../styles/about.module.css';
 import Footer from '@/components/Footer';
 import Title from '@/components/Title';
 
-
 const About = () => {
   return (
     <div className={styles.mainContainer}>
@@ -12,7 +11,7 @@ const About = () => {
         <Title />
         <div className={styles.aboutContainer}>
           <p className={styles.text}>
-            Who I AM
+            Who I amв
             <br />
             <br />
             My name is Jean-Marc Mazzoni, I am photographer concentrating in
@@ -22,6 +21,13 @@ const About = () => {
             practice many aspect of photography: portraits, pet portraits,
             street photography, nature, B&W. I also continue to paint and
             sculpt. Additionally, I speak English, French and Russian.
+            <br />
+            <br />
+            <br />
+            Where I am
+            <br />
+            <br />
+            San Mateo, San Francisco Peninsula, Bay Area, California
           </p>
 
           <br />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, use } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
-import Image from 'next/image';
+
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;

@@ -50,6 +50,7 @@ const Home = () => {
           (a: any, b: any) =>
             a.attributes.number_in_order - b.attributes.number_in_order
         );
+        
         const loadedPhotos = filteredData.map((photoItem: any) => {
          
           const photoId = photoItem.id;
