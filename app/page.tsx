@@ -46,13 +46,14 @@ const Home = () => {
           return el.attributes.number_in_order !== 'background';
         });
 
+    
+
         filteredData.sort(
           (a: any, b: any) =>
             a.attributes.number_in_order - b.attributes.number_in_order
         );
-        
+
         const loadedPhotos = filteredData.map((photoItem: any) => {
-         
           const photoId = photoItem.id;
           const title = photoItem.attributes.title;
           const numberInRow = photoItem.attributes.number_in_row;
@@ -77,7 +78,6 @@ const Home = () => {
 
   useEffect(() => {
     setPhotosToLoad(readyPhotos);
-    console.log('readyPhotos', readyPhotos);
   }, [readyPhotos]);
 
   const openModal = (imageIndex: number) => {
@@ -113,22 +113,24 @@ const Home = () => {
     overflow: 'scroll',
     backgroundColor: 'grey',
   };
+ const test = photosToLoad.filter((photo: any) => photo.title !== 'Gap');
+
   return (
     <main
       style={backgroundColorStatus ? mainStylesColorBack : mainStylesImageBack}
     >
       <div className={styles.grid}>
         <Title />
-        {photosToLoad.map((item: any, itemIndex: number) => {
-          console.log('start mapping')
-          if (item.renderNum === 0) {
-            console.log('empty')
+        {test.map((item: any, itemIndex: number) => {
+          console.log('start mapping');
+          // if (item.renderNum === 0) {
+          if (itemIndex === 11) {
+            console.log('empty');
             return <div key={itemIndex} className={styles.emptyBox}></div>;
           } else if (item.renderNum === 1) {
-            console.log('card1')
+            console.log('card1');
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card1}`}>
-               
                 <Image
                   alt={item.title}
                   src={item.src}
@@ -140,10 +142,9 @@ const Home = () => {
               </div>
             );
           } else if (item.renderNum === 2) {
-            console.log('card2')
+            console.log('card2');
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card2}`}>
-             
                 <Image
                   alt={item.title}
                   src={item.src}
@@ -155,10 +156,9 @@ const Home = () => {
               </div>
             );
           } else if (item.renderNum === 3) {
-            console.log('card3')
+            console.log('card3');
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card3}`}>
-             
                 <Image
                   alt={item.title}
                   src={item.src}

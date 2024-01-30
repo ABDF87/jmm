@@ -30,6 +30,12 @@
   margin-top: 150px;
   justify-content: baseline;
 }
+.phoneContainer{
+display: flex;
+align-items: center;
+color: #fff;
+gap: 0.5em;
+}
 
 .instagramContainer {
   display: flex;

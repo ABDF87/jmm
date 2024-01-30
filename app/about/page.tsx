@@ -11,7 +11,7 @@ const About = () => {
         <Title />
         <div className={styles.aboutContainer}>
           <p className={styles.text}>
-            Who I amв
+            Who I am
             <br />
             <br />
             My name is Jean-Marc Mazzoni, I am photographer concentrating in
