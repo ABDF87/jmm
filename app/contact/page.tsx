@@ -7,6 +7,8 @@ import Title from '@/components/Title';
 import { BsInstagram } from 'react-icons/bs';
 import { AiOutlineFacebook } from 'react-icons/ai';
 import { BsTelephone } from 'react-icons/bs';
+import { IoMailOutline } from "react-icons/io5";
+
 
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
@@ -57,97 +59,106 @@ const Contacts = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.mainWrapper}>
         <Title />
 
         <div className={styles.lowerWrapper}>
           <div className={styles.instaFormWrapper}>
-            <div className={styles.phoneContainer}>
-              <BsTelephone style={{ color: 'yellow', fontSize: '26px' }} />
-              <div className={styles.phoneLinks}>
-              <a href='tel:+14155179465'>+1 (415) 517-9465</a>                         
+            <div className={styles.formContainer}>
+              <div className={styles.contactsTitle}>
+                <h1>Contact me</h1>
               </div>
+              <form className={styles.form} ref={form} onSubmit={sendEmail}>
+                <input
+                  type='text'
+                  className={styles.formInput}
+                  name='user_name'
+                  placeholder='Name'
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  required
+                />
+                <input
+                  type='email'
+                  className={styles.formInput}
+                  name='user_email'
+                  placeholder='Email'
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  required
+                />
+                <textarea
+                  className={styles.messageInput}
+                  name='message'
+                  placeholder='Message'
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                />
+                <button type='submit' className={styles.formButton}>
+                  Send
+                </button>
+              </form>
+              {messageSent && (
+                <div className={styles.messageSent}>
+                  Your message has been sent. Thank you!
+                </div>
+              )}
             </div>
-            <div className={styles.instagramContainer}>
-              <BsInstagram
-                style={iconStyleInsta}
-                onClick={() => {
-                  router.push('https://www.instagram.com/jmmazzoni/');
-                }}
-              />
-              <div className={styles.instagramLinks}>
-                <p
-                  style={{ cursor: 'pointer' }}
+            <div className={styles.contactsContainer}>
+              <div className={styles.phoneContainer}>
+                <BsTelephone style={{ color: 'yellow', fontSize: '26px' }} />
+                <div className={styles.phoneLinks}>
+                  <a href='tel:+14155179465'>+1 (415) 517-9465</a>
+                </div>
+              </div>
+              <div className={styles.emailContainer}>
+                <IoMailOutline style={{ color: 'yellow', fontSize: '26px' }} />
+                <div className={styles.emailLinks}>
+                  <a href='mailto:mailto:info@jmmazzoni.com'>
+                    info@jmmazzoni.com
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.instagramContainer}>
+                <BsInstagram
+                  style={iconStyleInsta}
                   onClick={() => {
                     router.push('https://www.instagram.com/jmmazzoni/');
                   }}
-                >
-                  instagram.com/jmmazzoni
-                </p>
-                <p> ​@jmmatelier</p>
+                />
+                <div className={styles.instagramLinks}>
+                  <p
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      router.push('https://www.instagram.com/jmmazzoni/');
+                    }}
+                  >
+                    instagram.com/jmmazzoni
+                  </p>
+                  <p> ​@jmmatelier</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.facebookContainer}>
-              <AiOutlineFacebook
-                style={iconStyleFB}
-                onClick={() => {
-                  router.push('https://www.facebook.com/MazzoniStudio/');
-                }}
-              />
-              <div className={styles.facebookLinks}>
-                <p
-                  style={{ cursor: 'pointer' }}
+              <div className={styles.facebookContainer}>
+                <AiOutlineFacebook
+                  style={iconStyleFB}
                   onClick={() => {
                     router.push('https://www.facebook.com/MazzoniStudio/');
                   }}
-                >
-                  facebook.com/MazzoniStudio
-                </p>
+                />
+                <div className={styles.facebookLinks}>
+                  <p
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      router.push('https://www.facebook.com/MazzoniStudio/');
+                    }}
+                  >
+                    facebook.com/MazzoniStudio
+                  </p>
+                </div>
               </div>
             </div>
-
-            <form
-              className={styles.formContainer}
-              ref={form}
-              onSubmit={sendEmail}
-            >
-              <input
-                type='text'
-                className={styles.formInput}
-                name='user_name'
-                placeholder='Name'
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-                required
-              />
-              <input
-                type='email'
-                className={styles.formInput}
-                name='user_email'
-                placeholder='Email'
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                required
-              />
-              <textarea
-                className={styles.messageInput}
-                name='message'
-                placeholder='Message'
-                onChange={(e) => setMessage(e.target.value)}
-                value={message}
-              />
-              <button type='submit' className={styles.formButton}>
-                Send
-              </button>
-            </form>
-            {messageSent && (
-              <div className={styles.messageSent}>
-                Your message has been sent. Thank you!
-              </div>
-            )}
           </div>
         </div>
-      </div>
       <Footer />
     </div>
   );

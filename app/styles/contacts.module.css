@@ -9,32 +9,54 @@
   font-family: 'Nunito Sans', sans-serif;
   color: #080808;
 }
-.mainWrapper {
-  display: flex;
-  align-items: end;
-  width: 100%;
-}
+
 .lowerWrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  margin-top: 150px;
+}
+.contactsTitle{
+  display: flex;
+  width: 100%;
+  font-size: 25px;
+  color:#fff;
+
+  margin-bottom: 50px;
 }
 .instaFormWrapper {
   display: flex;
-  flex-direction: column;
   gap: 20px;
-  width: 40%;
-  margin-bottom: 40px;
+  width: 100%;
   font-size: 14px;
-  margin-top: 150px;
-  justify-content: baseline;
+  justify-content: space-around;
+}
+.contactsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:30px;
+
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  align-items: left;
+  width: 50%;
+
 }
 .phoneContainer{
 display: flex;
 align-items: center;
 color: #fff;
 gap: 0.5em;
+}
+.emailContainer{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 0.5em;
 }
 
 .instagramContainer {
@@ -60,7 +82,7 @@ gap: 0.5em;
   align-items: start;
 }
 
-.formContainer {
+.form {
   display: flex;
   flex-direction: column;
   justify-self: start;
@@ -68,7 +90,7 @@ gap: 0.5em;
   width: 80%;
   height: 100%;
 }
-.formContainer input {
+.form input {
   outline: none;
 }
 
@@ -139,13 +161,16 @@ gap: 0.5em;
         flex-direction: column;
         align-items: center;
       }
+      .formContainer{
+        width: 100%;
+      }
       .mainWrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
       }
-      .formContainer {
+      .form {
         display: flex;
         flex-direction: column;
         justify-self: start;
@@ -175,4 +200,23 @@ gap: 0.5em;
         font-family: 'Nunito Sans', sans-serif;
         color: #080808;
       }
+}
+@media (max-width: 430px){
+  .mainContainer{
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0px;
+    
+  }
+  .lowerWrapper {
+    margin-top: 0px;
+  }
+  .contactsContainer{
+    margin-bottom: 20px;
+  }
+  .instaFormWrapper {
+margin-left: 0px;
+
+  }
+
 }
