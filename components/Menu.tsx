@@ -35,6 +35,15 @@ const Menu = () => {
         >
           <Link href='/about'>About</Link>
         </div>
+        {/* <div
+          className={
+            activePage === '/blog'
+              ? styles.activeMenuItemWhite
+              : styles.menuItem
+          }
+        >
+          <Link href='/blog'>Blog</Link>
+        </div> */}
         <div
           className={
             activePage === '/contact'
@@ -44,6 +53,7 @@ const Menu = () => {
         >
           <Link href='/contact'>Contact</Link>
         </div>
+    
       </div>
      
     </main>
