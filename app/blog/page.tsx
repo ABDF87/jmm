@@ -95,20 +95,19 @@ const Blog = () => {
 
   function getCurrentDate() {
     const date = new Date();
-  
+
     // Get day, month, and year
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so we add 1
     const year = String(date.getFullYear()).slice(2); // Get the last two digits of the year
-  
+
     // Combine the parts into the desired format
     const formattedDate = `${day}/${month}/${year}`;
-  
+
     return formattedDate;
   }
-  
-  // Example usage
 
+  // Example usage
 
   const deployHandler = (id: number) => {
     setIsActiveId(id);
@@ -168,6 +167,7 @@ const Blog = () => {
         {posts.map(
           ({ id, title, author, date, image, annotation, content }) => (
             <div
+              key={id}
               className={
                 id !== isActiveId
                   ? styles.blogItemCollapsed
@@ -196,23 +196,26 @@ const Blog = () => {
                     <div className={styles.mainTextContainer}>
                       {annotation}
                       <br />
-                      {content.map((item: any) => {
+                      {content.map((item: any, index: any) => {
                         if (item.text === '') {
                           return <br />;
                         } else if (item.label === 'image') {
                           return (
-                            <div className={styles.imageInPostContainer}>
+                            <div
+                              key={index}
+                              className={styles.imageInPostContainer}
+                            >
                               <img src={item.text} alt='postImage' />
                             </div>
                           );
                         } else if (item.label === 'bold') {
                           return (
-                            <>
-                              <div className={styles.boldText}>{item.text}</div>
-                            </>
+                            <div key={index} className={styles.boldText}>
+                              {item.text}
+                            </div>
                           );
                         } else {
-                          return <div>{item.text}</div>;
+                          return <div key={index}>{item.text}</div>;
                         }
                       })}
                     </div>
