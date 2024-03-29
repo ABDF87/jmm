@@ -198,7 +198,7 @@ const Blog = () => {
                       <br />
                       {content.map((item: any, index: any) => {
                         if (item.text === '') {
-                          return <br />;
+                          return <br key={index} />;
                         } else if (item.label === 'image') {
                           return (
                             <div
