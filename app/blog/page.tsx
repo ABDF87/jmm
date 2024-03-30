@@ -31,10 +31,12 @@ const Blog = () => {
     const dataFetch = async () => {
       try {
         const res = await fetch(
-          'http://localhost:1337/api/blog-posts/?populate=*'
+            'https://jmmazzoni-site-backend.onrender.com/api/blog-posts/?populate=*'
+        
         );
         const data = await res.json();
         const currentPosts = [...posts];
+   
 
         data.data.map((postItem: any) => {
           const newPost: Post = {
@@ -47,14 +49,17 @@ const Blog = () => {
             content: [{ label: '', text: '' }],
           };
 
+
           // exract data from the response
           const post_Id = postItem.attributes.post_id;
           const title = postItem.attributes.title;
           const author = postItem.attributes.author;
-          const image = postItem.attributes.title_image.data[0].attributes.url;
+          const image = postItem.attributes.title_image.data.attributes.url;
           const currentDate = postItem.attributes.date;
           const annotation = postItem.attributes.annotation;
           const content: any = [{ label: '', text: '' }];
+
+       
 
           // sort information for the content
           postItem.attributes.main_text.map((mainTextItem: any) => {
