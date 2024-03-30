@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, use } from 'react';
 import styles from './Blog.module.css';
 import Title from '@/components/Title';
 
@@ -31,11 +31,11 @@ const Blog = () => {
     const dataFetch = async () => {
       try {
         const res = await fetch(
-          //   'https://jmmazzoni-site-backend.onrender.com/api/photos/?populate=*'
           'http://localhost:1337/api/blog-posts/?populate=*'
         );
         const data = await res.json();
-        console.log('data yo', data.data);
+        const currentPosts = [...posts];
+
         data.data.map((postItem: any) => {
           const newPost: Post = {
             id: 0,
@@ -47,20 +47,18 @@ const Blog = () => {
             content: [{ label: '', text: '' }],
           };
 
+          // exract data from the response
           const post_Id = postItem.attributes.post_id;
           const title = postItem.attributes.title;
           const author = postItem.attributes.author;
           const image = postItem.attributes.title_image.data[0].attributes.url;
-          const currentDate = getCurrentDate();
+          const currentDate = postItem.attributes.date;
           const annotation = postItem.attributes.annotation;
-          //   const content = postItem.attributes.main_text;
-          console.log('image', image);
-
           const content: any = [{ label: '', text: '' }];
 
+          // sort information for the content
           postItem.attributes.main_text.map((mainTextItem: any) => {
             const textItem: TextItem = { label: '', text: '' };
-            console.log('mainTextItem', mainTextItem);
             if (mainTextItem.type === 'image') {
               textItem.label = 'image';
               textItem.text = mainTextItem.image.url;
@@ -75,8 +73,8 @@ const Blog = () => {
               content.push(textItem);
             }
           });
-          console.log('content', content);
 
+          //write data to the newPost object
           newPost.id = post_Id;
           newPost.title = title;
           newPost.date = currentDate;
@@ -84,7 +82,9 @@ const Blog = () => {
           newPost.image = image;
           newPost.annotation = annotation;
           newPost.content = content;
-          setPosts([...posts, newPost]);
+
+          currentPosts.push(newPost);
+          setPosts(currentPosts);
         });
       } catch (error) {
         console.log(error);
@@ -92,22 +92,6 @@ const Blog = () => {
     };
     dataFetch();
   }, []);
-
-  function getCurrentDate() {
-    const date = new Date();
-
-    // Get day, month, and year
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so we add 1
-    const year = String(date.getFullYear()).slice(2); // Get the last two digits of the year
-
-    // Combine the parts into the desired format
-    const formattedDate = `${day}/${month}/${year}`;
-
-    return formattedDate;
-  }
-
-  // Example usage
 
   const deployHandler = (id: number) => {
     setIsActiveId(id);
@@ -117,47 +101,10 @@ const Blog = () => {
     setIsActiveId(0);
   };
 
-  const posts1 = [
-    {
-      id: 1,
-      title: 'How to make good photos of food',
-      date: '2021-10-10',
-      author: 'Jean-Mark Mazzoni',
-      image: '/teriyaki_chicken_i.jpg',
-      annotation:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      content:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    },
-    {
-      id: 2,
-      title: 'Do you really need food stylist?',
-      date: '2021-10-11',
-      author: 'Jane Doe',
-      image: '/frisee_aux_lardons_1_i.jpg',
-      annotation:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-
-      content:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    },
-    {
-      id: 3,
-      title: 'Is food on the photo eatable?',
-      date: '2021-10-12',
-      author: 'Kevin Doe',
-      image: '/L1000986_PS_edit last.jpg',
-      annotation:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-
-      content:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    },
-  ];
-
-  if (posts.length > 0) {
+  useEffect(() => {
     console.log('posts', posts);
-  }
+  }, [posts]);
+
   return (
     <div className={styles.mainContainer}>
       <Title />
