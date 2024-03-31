@@ -46,8 +46,6 @@ const Home = () => {
           return el.attributes.number_in_order !== 'background';
         });
 
-    
-
         filteredData.sort(
           (a: any, b: any) =>
             a.attributes.number_in_order - b.attributes.number_in_order
@@ -113,7 +111,7 @@ const Home = () => {
     overflow: 'scroll',
     backgroundColor: 'grey',
   };
- const test = photosToLoad.filter((photo: any) => photo.title !== 'Gap');
+  const test = photosToLoad.filter((photo: any) => photo.title !== 'Gap');
 
   return (
     <main
@@ -122,13 +120,10 @@ const Home = () => {
       <div className={styles.grid}>
         <Title />
         {test.map((item: any, itemIndex: number) => {
-          console.log('start mapping');
           // if (item.renderNum === 0) {
           if (itemIndex === 11) {
-            console.log('empty');
             return <div key={itemIndex} className={styles.emptyBox}></div>;
           } else if (item.renderNum === 1) {
-            console.log('card1');
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card1}`}>
                 <Image
@@ -142,7 +137,6 @@ const Home = () => {
               </div>
             );
           } else if (item.renderNum === 2) {
-            console.log('card2');
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card2}`}>
                 <Image
@@ -156,7 +150,6 @@ const Home = () => {
               </div>
             );
           } else if (item.renderNum === 3) {
-            console.log('card3');
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card3}`}>
                 <Image

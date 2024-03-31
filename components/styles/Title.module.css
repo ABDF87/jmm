@@ -66,12 +66,24 @@
 .deployedMenuContainerMobile {
   display: none;
 }
+@media (max-width: 828px) {
+  .mainContainer {
+    position: absolute;
+    left: 0%;
+    top: 3%;
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    height: auto;
+    margin-right: 100px;
+  }
+}
 
 @media (max-width: 768px) {
   .mainContainer {
     position: absolute;
-    left: 1%;
-    top: 5%;
+    left: 0%;
+    top: 2%;
     display: flex;
     gap: 40px;
     width: 100%;

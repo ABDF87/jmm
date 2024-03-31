@@ -71,6 +71,19 @@ const Title = () => {
             </div>
             <div
               className={
+                activePage === '/blog'
+                  ? styles.activeMobMenuItem
+                  : styles.mobMenuItem
+              }
+              onClick={() => {
+                router.push('/blog');
+              }}
+            >
+              {' '}
+              <p>Blog</p>
+            </div>
+            <div
+              className={
                 activePage === '/contact'
                   ? styles.activeMobMenuItem
                   : styles.mobMenuItem
