@@ -92,9 +92,11 @@ const Contacts = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
               />
+              <div className={styles.formButtonWrapper}>
               <button type='submit' className={styles.formButton}>
                 Send
               </button>
+              </div>
             </form>
             {messageSent && (
               <div className={styles.messageSent}>
