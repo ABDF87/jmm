@@ -16,6 +16,7 @@ interface Post {
       text: string;
     }
   ];
+  isVideo: boolean;
 }
 
 interface TextItem {
@@ -45,6 +46,7 @@ const Blog = () => {
             image: '',
             annotation: '',
             content: [{ label: '', text: '' }],
+            isVideo: false,
           };
 
           // exract data from the response
@@ -55,6 +57,15 @@ const Blog = () => {
           const currentDate = postItem.attributes.date;
           const annotation = postItem.attributes.annotation;
           const content: any = [{ label: '', text: '' }];
+
+          let isVideo: boolean;
+
+          if (image.includes('video')) {
+            isVideo = true;
+          } else {
+            isVideo = false;
+          }
+
 
           // sort information for the content
           postItem.attributes.main_text.map((mainTextItem: any) => {
@@ -82,6 +93,7 @@ const Blog = () => {
           newPost.image = image;
           newPost.annotation = annotation;
           newPost.content = content;
+          newPost.isVideo = isVideo;
 
           currentPosts.push(newPost);
           setPosts(currentPosts);
@@ -101,10 +113,6 @@ const Blog = () => {
     setIsActiveId(0);
   };
 
-  useEffect(() => {
-    console.log('posts', posts);
-  }, [posts]);
-
   return (
     <div className={styles.mainContainer}>
       <Title />
@@ -112,7 +120,16 @@ const Blog = () => {
       <div className={styles.blogContainer}>
         <div className={styles.blogTitle}>Food photography blog</div>
         {posts.map(
-          ({ id, title, author, date, image, annotation, content }) => (
+          ({
+            id,
+            title,
+            author,
+            date,
+            image,
+            annotation,
+            content,
+            isVideo,
+          }) => (
             <div
               key={id}
               className={
@@ -127,9 +144,17 @@ const Blog = () => {
                 <div className={styles.blogDate}>{date}</div>
               </div>
               <div className={styles.contentWrapper}>
-                <div className={styles.blogImage}>
-                  <img src={image} alt='postImage' />
-                </div>
+               
+                  {isVideo ? (
+                     <div className={styles.blogVideo}>
+                    <video src={image} muted autoPlay width={400} height={200} />
+                    </div>
+                  ) : (
+                    <div className={styles.blogImage}>
+                    <img src={image} alt='wtf' />
+                    </div>
+                  )}
+           
                 <div
                   className={
                     id !== isActiveId
