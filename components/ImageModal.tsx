@@ -7,6 +7,7 @@ interface ImageModalProps {
   onClose: () => void;
   indexImage: number;
   photos: any;
+  backgroundPhoto: string;
 }
 type currentIndex = number;
 type photosToLoad = {
@@ -62,6 +63,7 @@ const ImageModal = ({
   onClose,
   indexImage,
   photos,
+  backgroundPhoto,
 }: ImageModalProps) => {
   const [photosToLoad, setPhotosToLoad] = useState<photosToLoad>([]);
   const [currentIndex, setCurrentIndex] = useState<currentIndex>(indexImage);
@@ -75,10 +77,9 @@ const ImageModal = ({
 
 
 
-  photos = photos.filter((photo: any) => photo.title !== 'Gap');
+  // photos = photos.filter((photo: any) => photo.title !== 'Gap');
 
 
-  console.log('photos', photos);
   const arrowLeft = {
     border: 'none',
     cursor: 'pointer',
@@ -107,6 +108,14 @@ const ImageModal = ({
     );
   };
 
+//replace Gap with background
+    photos.map((photo:any) => {
+      if (photo.title === 'Gap') {
+       photo.src = backgroundPhoto
+      }
+    })
+
+
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex < photos.length - 1 ? prevIndex + 1 : 0
@@ -130,6 +139,8 @@ const ImageModal = ({
       window.removeEventListener('keydown', handleKeyPress);
     };
   }, [currentIndex]);
+
+
 
   return (
     <Modal

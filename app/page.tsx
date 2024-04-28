@@ -112,18 +112,18 @@ const Home = () => {
     backgroundColor: 'grey',
   };
   const test = photosToLoad.filter((photo: any) => photo.title !== 'Gap');
-
   return (
     <main
       style={backgroundColorStatus ? mainStylesColorBack : mainStylesImageBack}
     >
       <div className={styles.grid}>
         <Title />
-        {test.map((item: any, itemIndex: number) => {
+        {photosToLoad.map((item: any, itemIndex: number) => {
           // if (item.renderNum === 0) {
-          if (itemIndex === 11) {
+          // if (itemIndex === 11) {
+            if(item.title === 'Gap') {
             return <div key={itemIndex} className={styles.emptyBox}></div>;
-          } else if (item.renderNum === 1) {
+          } else if (item.renderNum === 1 && item.title !== 'Gap') {
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card1}`}>
                 <Image
@@ -136,7 +136,7 @@ const Home = () => {
                 />
               </div>
             );
-          } else if (item.renderNum === 2) {
+          } else if (item.renderNum === 2 && item.title !== 'Gap') {
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card2}`}>
                 <Image
@@ -149,7 +149,7 @@ const Home = () => {
                 />
               </div>
             );
-          } else if (item.renderNum === 3) {
+          } else if (item.renderNum === 3 && item.title !== 'Gap') {
             return (
               <div key={itemIndex} className={`${styles.card} ${styles.card3}`}>
                 <Image
@@ -170,6 +170,9 @@ const Home = () => {
         onClose={closeModal}
         indexImage={activeImageId}
         photos={photosToLoad}
+        backgroundPhoto={backgroundPhoto}
+      
+
       />
       <Footer />
     </main>

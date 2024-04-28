@@ -66,7 +66,6 @@ const Blog = () => {
             isVideo = false;
           }
 
-
           // sort information for the content
           postItem.attributes.main_text.map((mainTextItem: any) => {
             const textItem: TextItem = { label: '', text: '' };
@@ -144,17 +143,23 @@ const Blog = () => {
                 <div className={styles.blogDate}>{date}</div>
               </div>
               <div className={styles.contentWrapper}>
-               
-                  {isVideo ? (
-                     <div className={styles.blogVideo}>
-                    <video src={image} muted autoPlay width={400} height={200} />
-                    </div>
-                  ) : (
-                    <div className={styles.blogImage}>
+                {isVideo ? (
+                  <div className={styles.blogVideo}>
+                    <video
+                      src={image}
+                      muted
+                      autoPlay
+                      playsInline
+                      width={400}
+                      height={200}
+                    />
+                  </div>
+                ) : (
+                  <div className={styles.blogImage}>
                     <img src={image} alt='wtf' />
-                    </div>
-                  )}
-           
+                  </div>
+                )}
+
                 <div
                   className={
                     id !== isActiveId

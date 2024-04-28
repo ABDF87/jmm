@@ -79,7 +79,7 @@
 }
 .blogVideo {
   display: flex;
-  width: auto;
+  width: 200;
   height: auto;
   overflow: hidden;
   border-radius: 4px;
