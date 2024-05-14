@@ -149,8 +149,9 @@ const Blog = () => {
                       src={image}
                       muted
                       autoPlay
-                      // playsInline
+                      playsInline
                       // loop
+                      controls
                       width={400}
                       height={200}
                     />
