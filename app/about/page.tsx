@@ -44,6 +44,10 @@ const About = () => {
             <br />
             <br />
           </p>
+          <p>I am also a licensed commercial drone pilot under FAA regulations.
+
+
+</p>
         </div>
       </div>
       <Footer />
