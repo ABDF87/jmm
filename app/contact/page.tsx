@@ -138,7 +138,6 @@ const Contacts = () => {
                   >
                     instagram.com/jmmazzoni
                   </p>
-                  <p> ​@jmmatelier</p>
                 </div>
               </div>
               <div className={styles.facebookContainer}>
