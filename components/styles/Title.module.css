@@ -150,5 +150,23 @@
     border-bottom: 1px solid #2d2d2d;
     background-color: #000;
   }
-
+  @media (max-width: 743px) {
+    .titleWrapper {
+      display: flex;
+      flex-direction: column;
+      width: 150px;
+      margin-left: 20px;
+    }
+    .titleName {
+      display: flex;
+      justify-content: start;
+      font-size: 16px;
+    }
+    .titleSubName {
+      display: flex;
+      font-size: 12px;
+      text-align: left;
+      justify-content: start;
+    }
+  }
 }

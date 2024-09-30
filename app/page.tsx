@@ -24,7 +24,7 @@ const Home = () => {
   const [readyPhotos, setReadyPhotos] = useState<photos[]>([]);
   const [photosToLoad, setPhotosToLoad] = useState<photos[]>([]);
   const [backgroundColorStatus, setBackgroundColorStatus] =
-    useState<boolean>(false);
+    useState<boolean>(true);
   const [backgroundPhoto, setBackgroundPhoto] = useState<string>('');
 
   useEffect(() => {
@@ -109,7 +109,9 @@ const Home = () => {
     width: '100%',
     height: '100vh',
     overflow: 'scroll',
-    backgroundColor: 'grey',
+    // backgroundColor: '#cfdbd5',
+    // backgroundColor: '#edf2f4',
+     backgroundColor: '#edf2fb'
   };
   const test = photosToLoad.filter((photo: any) => photo.title !== 'Gap');
   return (
