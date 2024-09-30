@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
-      <meta name="theme-color" content="#edf2fb"/>
+      <meta name="theme-color" content="#242424"/>
         <link
           href='https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap'
           rel='stylesheet'
