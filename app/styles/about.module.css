@@ -87,3 +87,7 @@
         background-color: #242424;
       }
 }
+
+@media (max-height:450px){
+  
+}

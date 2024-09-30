@@ -110,8 +110,8 @@ const Home = () => {
     height: '100vh',
     overflow: 'scroll',
     // backgroundColor: '#cfdbd5',
-    backgroundColor: '#dd0426',
-    //  backgroundColor: '#edf2fb'
+    // backgroundColor: '#dd0426',
+     backgroundColor: '#edf2fb'
   };
   const test = photosToLoad.filter((photo: any) => photo.title !== 'Gap');
   return (
