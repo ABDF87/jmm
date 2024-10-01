@@ -49,7 +49,7 @@ const About = () => {
           </p>
         </div>
       {/* </div> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

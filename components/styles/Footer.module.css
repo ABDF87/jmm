@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
 .mainContainer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   display: flex;
   justify-content: right;
@@ -17,7 +17,7 @@
 
 @media (max-width:780px) {
     .mainContainer {
-        position: absolute;
+        position: relative;
         bottom: 0;
         display: flex;
         justify-content: right;
