@@ -2,6 +2,7 @@
 import React, { useState, useEffect, use } from 'react';
 import styles from './Blog.module.css';
 import Title from '@/components/Title';
+import Footer from '@/components/Footer';
 
 interface Post {
   id: number;
@@ -220,6 +221,7 @@ const Blog = () => {
           )
         )}
       </div>
+      <Footer />
     </div>
   );
 };
