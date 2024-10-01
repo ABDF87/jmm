@@ -16,7 +16,8 @@
     "react-dom": "latest",
     "react-icons": "^4.11.0",
     "react-modal": "^3.16.1",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@types/node": "latest",

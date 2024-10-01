@@ -1,6 +1,9 @@
 import React, { useState, useEffect, use } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+
 
 interface ImageModalProps {
   isOpen: boolean;
