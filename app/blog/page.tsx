@@ -118,7 +118,7 @@ const Blog = () => {
       <Title />
 
       <div className={styles.blogContainer}>
-        <div className={styles.blogTitle}>Food photography blog</div>
+        {/* <div className={styles.blogTitle}>Food photography blog</div> */}
         {posts.map(
           ({
             id,
@@ -221,7 +221,7 @@ const Blog = () => {
           )
         )}
       </div>
-      <Footer />
+
     </div>
   );
 };
