@@ -86,7 +86,7 @@ const ImageModal = ({
       left: '50%',
       right: 'auto',
       bottom: 'auto',
-      width: '130%',
+      width: '80%',
       height: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
