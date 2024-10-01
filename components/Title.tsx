@@ -4,23 +4,30 @@ import Menu from './Menu';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { FiMenu } from 'react-icons/fi';
+import MobileMenu from '@/components/mobile_menu/MobileMenu';
+
 
 const Title = () => {
   const [activePage, setActivePage] = useState('');
   const [deployedMenu, setDeployedMenu] = useState(false);
+  const [isMobileMenuDeployed, setIsMobileMenuDeployed] = useState(false);
+
   const pathName = usePathname();
   const router = useRouter();
 
   const deployMobMenuHandler = () => {
-    setDeployedMenu(!deployedMenu);
+    // setDeployedMenu(!deployedMenu);
+    setIsMobileMenuDeployed(!isMobileMenuDeployed)
   };
 
   useEffect(() => {
     setActivePage(pathName);
   }, [pathName]);
 
+
   return (
     <div className={styles.mainContainer} style={{ cursor: 'pointer' }}>
+         
       <div className={styles.mainWrapper}>
         <div
           className={styles.mainTitle}
@@ -41,8 +48,12 @@ const Title = () => {
         className={styles.deployedMenuContainerMobile}
         onClick={deployMobMenuHandler}
       >
+             <MobileMenu
+                setIsMobileMenuDeployed={setIsMobileMenuDeployed}
+                isMobileMenuDeployed={isMobileMenuDeployed}
+              />
         <FiMenu style={{ fontSize: '25px', color: 'white' }} />
-        {deployedMenu && (
+        {/* {deployedMenu && (
           <div className={styles.deployedMobMenuContainer}>
             <div
               className={
@@ -96,8 +107,9 @@ const Title = () => {
               <p>Contact</p>
             </div>
           </div>
-        )}
+        )} */}
       </div>
+ 
     </div>
   );
 };

@@ -118,6 +118,7 @@ const Home = () => {
     <main
       style={backgroundColorStatus ? mainStylesColorBack : mainStylesImageBack}
     >
+    
       <div className={styles.grid}>
         <Title />
         {photosToLoad.map((item: any, itemIndex: number) => {
