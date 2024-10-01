@@ -4,7 +4,6 @@ import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
-
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -20,38 +19,7 @@ type photosToLoad = {
   renderNum: number;
 }[];
 
-const customStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.9)',
-    zIndex: 1000,
-  },
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    width: '80%',
-    height: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    transition: 'all 3s ease',
-    padding: '0px',
-    border: 'none',
-    backgroundColor: 'transparent',
-  },
-};
 
-const buttonsContainer: any = {
-  position: 'absolute',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  width: '100%',
-  height: '100%',
-  backgroundColor: 'transparent',
-  border: 'none',
-  cursor: 'pointer',
-};
 
 const slideStyles: any = {
   transition: 'transform 3s ease-in-out',
@@ -75,13 +43,61 @@ const ImageModal = ({
   const [rightArrowColor, setRightArrowColor] = useState<string>('grey');
 
   //   Modal.setAppElement('#root')
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
+  useEffect(() => {
+    // This code runs only on the client side, after the component is mounted
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
 
+    // Set initial size
+    handleResize();
 
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
 
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Empty dependency array means it runs only on mount and unmount
+
+  const buttonsContainer: any = {
+    position: 'absolute',
+    display: windowSize.width < 450 ? 'none' : 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+  };
+
+  const customStyles = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.9)',
+      zIndex: 1000,
+    },
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      width: '130%',
+      height: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      transition: 'all 3s ease',
+      padding: '0px',
+      border: 'none',
+      backgroundColor: 'transparent',
+    },
+  };
 
   // photos = photos.filter((photo: any) => photo.title !== 'Gap');
-
 
   const arrowLeft = {
     border: 'none',
@@ -111,13 +127,12 @@ const ImageModal = ({
     );
   };
 
-//replace Gap with background
-    photos.map((photo:any) => {
-      if (photo.title === 'Gap') {
-       photo.src = backgroundPhoto
-      }
-    })
-
+  //replace Gap with background
+  photos.map((photo: any) => {
+    if (photo.title === 'Gap') {
+      photo.src = backgroundPhoto;
+    }
+  });
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
@@ -142,8 +157,6 @@ const ImageModal = ({
       window.removeEventListener('keydown', handleKeyPress);
     };
   }, [currentIndex]);
-
-
 
   return (
     <Modal
