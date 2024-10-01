@@ -7,8 +7,8 @@ import Title from '@/components/Title';
 const About = () => {
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.bodyWrapper}>
-        <Title />
+      <Title />
+      {/* <div className={styles.bodyWrapper}> */}
         <div className={styles.aboutContainer}>
           <p className={styles.text}>
             Who I am
@@ -44,12 +44,11 @@ const About = () => {
             <br />
             <br />
           </p>
-          <p>I am also a licensed commercial drone pilot under FAA regulations.
-
-
-</p>
+          <p>
+            I am also a licensed commercial drone pilot under FAA regulations.
+          </p>
         </div>
-      </div>
+      {/* </div> */}
       <Footer />
     </div>
   );
