@@ -63,7 +63,7 @@ const Contacts = () => {
       <div className={styles.lowerWrapper}>
         <div className={styles.instaFormWrapper}>
           <div className={styles.formContainer}>
-            <div className={styles.contactsTitle}>
+            {/* <div className={styles.contactsTitle}>
               <h1>Contact me</h1>
             </div>
             <form className={styles.form} ref={form} onSubmit={sendEmail}>
@@ -97,7 +97,7 @@ const Contacts = () => {
                 Send
               </button>
               </div>
-            </form>
+            </form> */}
             {messageSent && (
               <div className={styles.messageSent}>
                 Your message has been sent. Thank you!
