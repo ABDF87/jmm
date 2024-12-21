@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import { IoIosClose } from 'react-icons/io';
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -18,8 +19,6 @@ type photosToLoad = {
   title: string;
   renderNum: number;
 }[];
-
-
 
 const slideStyles: any = {
   transition: 'transform 3s ease-in-out',
@@ -190,6 +189,9 @@ const ImageModal = ({
         alt={`Image ${currentIndex + 1}`}
         style={slideStyles}
       />
+      <div style={{ position: 'absolute', right: '10px', top: '50px',  }}>
+        <IoIosClose onClick={onClose} style={{ width:'40px', height:'40px', color:'#f26907', cursor:'pointer'}}  />
+      </div>
     </Modal>
   );
 };
