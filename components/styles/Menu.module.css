@@ -20,7 +20,7 @@
   justify-content: center;
   width: 100px;
   padding: 10px;
-  color: #a09e9e;
+  color: #f7f4f4;
   cursor: pointer;
   font-size: 14px;
 }
@@ -50,7 +50,7 @@
   width: 100px;
   padding: 10px;
   cursor: pointer;
-  color: #fff;
+  color: rgb(220, 187, 91);
   font-size: 14px;
 }
 .menuItem:hover {
