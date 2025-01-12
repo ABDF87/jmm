@@ -2,8 +2,8 @@
 
 .mainContainer {
   position: absolute;
-  left: 1%;
-  top: 5%;
+  left: 0%;
+  top: 3%;
   display: flex;
   width: 100%;
   height: auto;
@@ -11,11 +11,13 @@
   align-items: center;
   justify-content: space-between;
   padding-right: 20px;
-  background-color: transparent;
+  background-color: #000000ac;
+  padding: 10px 0;
   z-index: 50;
 }
 .mainWrapper {
   display: flex;
+
   gap: 20px;
 }
 .mainTitle {
@@ -69,6 +71,7 @@
 @media (max-width: 828px) {
   .mainContainer {
     position: absolute;
+    justify-content: space-around;
     left: 0%;
     top: 3%;
     display: flex;
@@ -110,9 +113,10 @@
 
   .deployedMenuContainerMobile {
     display: flex;
-    justify-content: left;
-    align-items: baseline;
+    /* justify-content: left;
+    align-items: baseline; */
     z-index: 150;
+
   }
   .deployedMobMenuContainer {
     position: absolute;
