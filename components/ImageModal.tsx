@@ -35,11 +35,10 @@ const ImageModal = ({
   photos,
   backgroundPhoto,
 }: ImageModalProps) => {
-  const [photosToLoad, setPhotosToLoad] = useState<photosToLoad>([]);
+  // const [photosToLoad, setPhotosToLoad] = useState<photosToLoad>([]);
   const [currentIndex, setCurrentIndex] = useState<currentIndex>(indexImage);
-  const [activeIndex, setActiveIndex] = useState<currentIndex>(0);
-  const [leftArrowColor, setLeftArrowColor] = useState<string>('grey');
-  const [rightArrowColor, setRightArrowColor] = useState<string>('grey');
+  const [leftArrowColor, setLeftArrowColor] = useState<string>('black');
+  const [rightArrowColor, setRightArrowColor] = useState<string>('black');
 
   //   Modal.setAppElement('#root')
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -99,24 +98,34 @@ const ImageModal = ({
   // photos = photos.filter((photo: any) => photo.title !== 'Gap');
 
   const arrowLeft = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     border: 'none',
     cursor: 'pointer',
     color: leftArrowColor,
     fontSize: '30px',
-    padding: '20px',
+    backgroundColor: '#f9cd81bb',
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
   };
   const arrowRight = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     border: 'none',
     cursor: 'pointer',
     color: rightArrowColor,
     fontSize: '30px',
-    padding: '20px',
+    backgroundColor: '#f9cd81bb',
+    width: '50px',
+    height: '50px',
+    borderRadius: '50%',
   };
-  useEffect(() => {
-    setPhotosToLoad(photos);
-  }, []);
 
   useEffect(() => {
+    console.log('current in use', currentIndex);
     setCurrentIndex(indexImage);
   }, [indexImage]);
 
@@ -157,6 +166,7 @@ const ImageModal = ({
     };
   }, [currentIndex]);
 
+  console.log('photo', photos[indexImage]);
   return (
     <Modal
       isOpen={isOpen}
@@ -184,13 +194,27 @@ const ImageModal = ({
         </div>
       </div>
 
+      {/* <img
+        src={photos[currentIndex]?.src}
+        alt={`Image ${currentIndex + 1}`}
+        style={slideStyles}
+      /> */}
       <img
         src={photos[currentIndex]?.src}
         alt={`Image ${currentIndex + 1}`}
         style={slideStyles}
       />
-      <div style={{ position: 'absolute', right: '10px', top: '50px',  }}>
-        <IoIosClose onClick={onClose} style={{ width:'40px', height:'40px', color:'#f26907', cursor:'pointer'}}  />
+
+      <div style={{ position: 'absolute', right: '10px', top: '50px' }}>
+        <IoIosClose
+          onClick={onClose}
+          style={{
+            width: '40px',
+            height: '40px',
+            color: '#f26907',
+            cursor: 'pointer',
+          }}
+        />
       </div>
     </Modal>
   );

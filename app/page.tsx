@@ -19,8 +19,8 @@ interface photos {
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImageId, setSelectedImageId] = useState<number>(0);
-  const [activeImageId, setActiveImageId] = useState<number>(0);
+  const [selectedImageId, setSelectedImageId] = useState<any>();
+  const [activeImageId, setActiveImageId] = useState<any>();
   const [readyPhotos, setReadyPhotos] = useState<photos[]>([]);
   const [photosToLoad, setPhotosToLoad] = useState<photos[]>([]);
   const [backgroundColorStatus, setBackgroundColorStatus] =
@@ -88,7 +88,7 @@ const Home = () => {
   }, [selectedImageId]);
 
   const closeModal = () => {
-    setSelectedImageId(0);
+    setSelectedImageId('');
     setIsModalOpen(false);
   };
 
