@@ -21,7 +21,9 @@
 .photoWrapper{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 50%;
+margin-top: 100px;
 
 }
 .aboutContainer {
@@ -100,6 +102,9 @@
     height: auto;
     background-color: #242424;
   }
+  .photoWrapper{
+    margin-top: 0px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -117,5 +122,8 @@
     height: auto;
     background-color: #242424;
     margin-top: 100px;
+  }
+  .photoWrapper{
+    margin-top: 0px;
   }
 }

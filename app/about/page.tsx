@@ -29,18 +29,17 @@ const About = () => {
           <br />
           A bit more
           <br />
+          <br />
           Besides this I continue to practice many aspect of photography:
           portraits, pet portraits, street photography, nature, B&W. I also
           continue to paint and sculpt. Additionally, I speak English, French
           and Russian.
           <br />
           <br />
-          San Mateo, San Francisco Peninsula, Bay Area, California
         </p>
 
         <br />
-        <br />
-        <br />
+      
         <p>
           My History
           <br />
