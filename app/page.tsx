@@ -122,7 +122,7 @@ const Home = () => {
       <div className={styles.grid}>
         <Title />
     
-      <div className={styles.logoContainer}>  <Image alt='' src='/logo.jpg' width={100} height={100}/></div>
+      <div className={styles.logoContainer}>  <Image alt='' src='/logo-round-white.png' width={100} height={100}/></div>
       
         {photosToLoad.map((item: any, itemIndex: number) => {
           // if (item.renderNum === 0) {
@@ -208,7 +208,7 @@ const Home = () => {
 
       />
       <div className={styles.bottomLogoContainer}>
-        <Image alt='' src='/horizontal-logo.jpg' width={300} height={100}/>
+        <Image alt='' src='/logo-long-white.png' width={180} height={100}/>
       </div>
       <Footer />
     </main>

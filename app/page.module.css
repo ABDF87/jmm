@@ -111,7 +111,6 @@ display: flex;
 width: 100%;
 justify-content: center;
 align-items: center;
-
   margin-bottom: 50px;
 }
 @media (max-width: 830px) {
@@ -152,6 +151,12 @@ align-items: center;
   .emptyBox {
     display: none;
   }
+  .card5 {
+    width: 100%;
+    margin-bottom: 3px;
+  }
+
+  
 
   @media (max-width: 450px) {
     .grid {
@@ -177,5 +182,21 @@ align-items: center;
       width: 97%;
       border-radius: 10px;
     }
+    .card4 {
+      width: 97%;
+      border-radius: 10px;
+    }
+    .card5 {
+      width: 97%;
+      border-radius: 10px;
+    }
+    .bottomLogoContainer{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+        margin-bottom: 10px;
+      }
   }
 }

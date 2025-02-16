@@ -63,7 +63,7 @@ const Contacts = () => {
       <div className={styles.lowerWrapper}>
         <div className={styles.instaFormWrapper}>
           <div className={styles.formContainer}>
-          <div className={styles.logoContainer}>  <Image alt='' src='/logo.jpg' width={400} height={400}/></div>
+          <div className={styles.logoContainer}>  <Image alt='' src='/logo-round-white.png' width={400} height={400}/></div>
 
             {/* <div className={styles.contactsTitle}>
               <h1>Contact me</h1>
