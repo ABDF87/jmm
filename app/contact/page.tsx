@@ -8,7 +8,7 @@ import { BsInstagram } from 'react-icons/bs';
 import { AiOutlineFacebook } from 'react-icons/ai';
 import { BsTelephone } from 'react-icons/bs';
 import { IoMailOutline } from 'react-icons/io5';
-
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -63,6 +63,8 @@ const Contacts = () => {
       <div className={styles.lowerWrapper}>
         <div className={styles.instaFormWrapper}>
           <div className={styles.formContainer}>
+          <div className={styles.logoContainer}>  <Image alt='' src='/logo.jpg' width={400} height={400}/></div>
+
             {/* <div className={styles.contactsTitle}>
               <h1>Contact me</h1>
             </div>
@@ -193,6 +195,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

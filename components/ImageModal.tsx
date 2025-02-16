@@ -76,16 +76,21 @@ const ImageModal = ({
 
   const customStyles = {
     overlay: {
+  
+     
       backgroundColor: 'rgba(0, 0, 0, 0.9)',
       zIndex: 1000,
     },
     content: {
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
       top: '50%',
       left: '50%',
       right: 'auto',
       bottom: 'auto',
-      width: '80%',
-      height: 'auto',
+      width: '50%',
+      height: '100%',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
       transition: 'all 3s ease',

@@ -121,6 +121,9 @@ const Home = () => {
     
       <div className={styles.grid}>
         <Title />
+    
+      <div className={styles.logoContainer}>  <Image alt='' src='/logo.jpg' width={100} height={100}/></div>
+      
         {photosToLoad.map((item: any, itemIndex: number) => {
           // if (item.renderNum === 0) {
           // if (itemIndex === 11) {
@@ -166,6 +169,33 @@ const Home = () => {
               </div>
             );
           }
+          else if (item.renderNum === 4 && item.title !== 'Gap') {
+            return (
+              <div key={itemIndex} className={`${styles.card} ${styles.card4}`}>
+                <Image
+                  alt={item.title}
+                  src={item.src}
+                  width={1000}
+                  height={1000}
+                  loading='eager'
+                  onClick={() => openModal(itemIndex)}
+                />
+              </div>
+            );
+          }else if (item.renderNum === 5 && item.title !== 'Gap') {
+            return (
+              <div key={itemIndex} className={`${styles.card} ${styles.card5}`}>
+                <Image
+                  alt={item.title}
+                  src={item.src}
+                  width={1000}
+                  height={1000}
+                  loading='eager'
+                  onClick={() => openModal(itemIndex)}
+                />
+              </div>
+            );
+          }
         })}
       </div>
       <DynamicHeader
@@ -177,6 +207,9 @@ const Home = () => {
       
 
       />
+      <div className={styles.bottomLogoContainer}>
+        <Image alt='' src='/horizontal-logo.jpg' width={300} height={100}/>
+      </div>
       <Footer />
     </main>
   );
