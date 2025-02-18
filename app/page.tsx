@@ -5,6 +5,8 @@ import Footer from '../components/Footer';
 import Title from '../components/Title';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import TagManager from "react-gtm-module";
+
 
 const DynamicHeader = dynamic(() => import('../components/ImageModal'), {
   ssr: false,
@@ -26,6 +28,10 @@ const Home = () => {
   const [backgroundColorStatus, setBackgroundColorStatus] =
     useState<boolean>(true);
   const [backgroundPhoto, setBackgroundPhoto] = useState<string>('');
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: "G-R6HXHPJNV2" }); // Replace with your GTM ID
+  }, []);
 
   useEffect(() => {
     const dataFetch = async () => {
