@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { PiLinkedinLogo } from 'react-icons/pi';
 
 const iconStyleInsta = {
   color: 'white',
@@ -63,7 +64,15 @@ const Contacts = () => {
       <div className={styles.lowerWrapper}>
         <div className={styles.instaFormWrapper}>
           <div className={styles.formContainer}>
-          <div className={styles.logoContainer}>  <Image alt='' src='/logo-round-white.png' width={400} height={400}/></div>
+            <div className={styles.logoContainer}>
+              {' '}
+              <Image
+                alt=''
+                src='/logo-round-white.png'
+                width={400}
+                height={400}
+              />
+            </div>
 
             {/* <div className={styles.contactsTitle}>
               <h1>Contact me</h1>
@@ -151,7 +160,7 @@ const Contacts = () => {
                 />
                 <div className={styles.facebookLinks}>
                   <p
-                    style={{ cursor: 'pointer' }}
+                  
                     onClick={() => {
                       router.push('https://www.facebook.com/MazzoniStudio/');
                     }}
@@ -159,6 +168,22 @@ const Contacts = () => {
                     facebook.com/MazzoniStudio
                   </p>
                 </div>
+              </div>
+              <div className={styles.facebookContainer}>
+              <PiLinkedinLogo   style={iconStyleFB}  onClick={() => {
+                    router.push('https://www.linkedin.com/in/jmmazzoni/');
+                  }}/>
+              <div className={styles.instagramLinks}>
+                <p
+                
+                 style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      router.push('https://www.linkedin.com/in/jmmazzoni/');
+                    }}
+                  >
+                  https://www.linkedin.com/in/jmmazzoni/
+                </p>
+              </div>
               </div>
             </div>
 
