@@ -132,7 +132,6 @@ const Contacts = () => {
                   </a>
                 </div>
               </div>
-
               <div className={styles.instagramContainer}>
                 <BsInstagram
                   style={iconStyleInsta}
@@ -160,7 +159,6 @@ const Contacts = () => {
                 />
                 <div className={styles.facebookLinks}>
                   <p
-                  
                     onClick={() => {
                       router.push('https://www.facebook.com/MazzoniStudio/');
                     }}
@@ -170,20 +168,28 @@ const Contacts = () => {
                 </div>
               </div>
               <div className={styles.facebookContainer}>
-              <PiLinkedinLogo   style={iconStyleFB}  onClick={() => {
+                <PiLinkedinLogo
+                  style={iconStyleFB}
+                  onClick={() => {
                     router.push('https://www.linkedin.com/in/jmmazzoni/');
-                  }}/>
-              <div className={styles.instagramLinks}>
-                <p
-                
-                 style={{ cursor: 'pointer' }}
+                  }}
+                />
+                <div className={styles.instagramLinks}>
+                  <p
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       router.push('https://www.linkedin.com/in/jmmazzoni/');
                     }}
                   >
-                  https://www.linkedin.com/in/jmmazzoni/
-                </p>
+                    https://www.linkedin.com/in/jmmazzoni/
+                  </p>
+                </div>
               </div>
+              <div style={{width:'300px'}}>
+              Based in San Francisco Bay Area.
+              <br />
+              Spoken Languages: English, French and Russian. Licensed commercial
+              drone pilot under FAA regulations.
               </div>
             </div>
 

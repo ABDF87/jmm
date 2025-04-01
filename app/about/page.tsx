@@ -32,8 +32,7 @@ const About = () => {
           <br />
           Besides this I continue to practice many aspect of photography:
           portraits, pet portraits, street photography, nature, B&W. I also
-          continue to paint and sculpt. Additionally, I speak English, French
-          and Russian.
+          continue to paint and sculpt. 
           <br />
           <br />
         </p>
