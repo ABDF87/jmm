@@ -3,3 +3,206 @@
     height: auto;
     min-height: 100vh;
 }
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .logoContainer{
+    position: absolute;
+    z-index: 100;
+    top:0px;
+    right: 60px;
+  
+  }
+  .emptyBox {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 2;
+  }
+  .card {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+  }
+  .card img:hover {
+    cursor: pointer;
+  }
+  
+  .card1 {
+    display: flex;
+    width: 97%;
+    height: auto;
+    margin-bottom: 8px;
+    margin-top: 5px;
+  border-radius: 10px;
+  }
+  .card1 img {
+    width: 100%;
+    height: auto;
+  }
+  .card2 {
+    display: flex;
+    width: 48.2%;
+    height: auto;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  
+  .card2 img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card2 img:hover {
+    transform: scale(1.2);
+    transition: transform 3s;
+  }
+  .card3 {
+    display: flex;
+    width: 32%;
+    height: auto;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  
+  .card3 img {
+    width: 100%;
+    height: auto;
+  }
+  .card3 img:hover {
+    transform: scale(1.2);
+    transition: transform 3s;
+  }
+  .card4 {
+    display: flex;
+    width: 24%;
+    height: auto;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  .card4 img {
+    width: 100%;
+    height: auto;
+  }
+  .card4 img:hover {
+    transform: scale(1.2);
+    transition: transform 3s;
+  }
+  .card5 {
+    display: flex;
+    width: 19%;
+    height: auto;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  .card5 img {
+    width: 100%;
+    height: auto;
+  }
+  .card5 img:hover {
+    transform: scale(1.2);
+    transition: transform 3s;
+  }
+  .bottomLogoContainer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 830px) {
+    .emptyBox {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+  
+    .card1 {
+      width: 100%;
+      margin-bottom: 3px;
+    }
+  
+    .card2 {
+      width: 100%;
+      margin-bottom: 3px;
+    }
+    .card3 {
+      width: 100%;
+      margin-bottom: 3px;
+    }
+    .card4 {
+      width: 100%;
+      margin-bottom: 3px;
+    }
+    .card4 {
+      width: 100%;
+      margin-bottom: 3px;
+    }
+  
+    .emptyBox {
+      display: none;
+    }
+    .card5 {
+      width: 100%;
+      margin-bottom: 3px;
+    }
+  
+    
+  
+    @media (max-width: 450px) {
+      .grid {
+        display: flex;
+  
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        margin-top: 7px;
+      }
+  
+      .card1 {
+        width: 97%;
+        border-radius: 10px;
+        margin-bottom: 0;
+  
+      }
+      .card2 {
+        width: 97%;
+        border-radius: 10px;
+      }
+      .card3 {
+        width: 97%;
+        border-radius: 10px;
+      }
+      .card4 {
+        width: 97%;
+        border-radius: 10px;
+      }
+      .card5 {
+        width: 97%;
+        border-radius: 10px;
+      }
+      .bottomLogoContainer{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+          margin-bottom: 10px;
+        }
+    }
+  }
+  
