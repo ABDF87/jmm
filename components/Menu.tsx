@@ -28,6 +28,13 @@ const Menu = () => {
         </div>
         <div
           className={
+            activePage === '/drinks' ? styles.activeMenuItemWhite : styles.menuItem
+          }
+        >
+          <Link href='/drinks'>Drinks</Link>
+        </div>
+        <div
+          className={
             activePage === '/about'
               ? styles.activeMenuItemWhite
               : styles.menuItem
