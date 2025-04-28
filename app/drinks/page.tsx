@@ -44,10 +44,7 @@ const Drinks = () => {
 
         console.log('data-drinks', data)
 
-       const drinks =  data.data.filter((photoItem:any)=>{
-        return photoItem.attributes.src.data.attributes.alternativeText == 'drink'
-       })
-       console.log('drinks', drinks)
+    
 
         data.data.filter((photoItem: any) => {
           if (photoItem.attributes.number_in_order === 'background') {
@@ -64,7 +61,7 @@ const Drinks = () => {
             a.attributes.number_in_order - b.attributes.number_in_order
         );
 
-        const loadedPhotos = drinks.map((photoItem: any) => {
+        const loadedPhotos = filteredData.map((photoItem: any) => {
           const photoId = photoItem.id;
           const title = photoItem.attributes.title;
           const numberInRow = photoItem.attributes.number_in_row;

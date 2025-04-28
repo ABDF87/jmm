@@ -59,13 +59,15 @@ const MobileMenu = ({ setIsMobileMenuDeployed, isMobileMenuDeployed }: Props) =>
       onClick={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'About', 'Blog', 'Contact'].map(
+        {['Home', 'Drinks','About', 'Blog', 'Contact'].map(
           (text, index) => (
             <ListItem
               key={text}
               disablePadding
               sx={
                 activeMenuItem === '/' && text === 'Home'
+                  ? { backgroundColor: '#000' }
+                  : activeMenuItem === '/drinks' && text === 'Drinks'
                   ? { backgroundColor: '#000' }
                   : activeMenuItem === '/about' && text === 'About'
                   ? { backgroundColor: '#000' }
@@ -86,6 +88,8 @@ const MobileMenu = ({ setIsMobileMenuDeployed, isMobileMenuDeployed }: Props) =>
                   href={
                     text === 'Home'
                       ? `/`
+                       : text === 'Drinks'
+                      ? '/drinks'
                       : text === 'About'
                       ? '/about'
                       : text === 'Blog'
