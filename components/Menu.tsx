@@ -42,7 +42,7 @@ const Menu = () => {
         >
           <Link href='/about'>About</Link>
         </div>
-        <div
+        {/* <div
           className={
             activePage === '/blog'
               ? styles.activeMenuItemWhite
@@ -50,7 +50,7 @@ const Menu = () => {
           }
         >
           <Link href='/blog'>Blog</Link>
-        </div>
+        </div> */}
         <div
           className={
             activePage === '/contact'

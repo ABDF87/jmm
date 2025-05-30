@@ -59,7 +59,7 @@ const MobileMenu = ({ setIsMobileMenuDeployed, isMobileMenuDeployed }: Props) =>
       onClick={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Drinks','About', 'Blog', 'Contact'].map(
+        {['Home', 'Drinks','About','Contact'].map(
           (text, index) => (
             <ListItem
               key={text}
@@ -70,8 +70,8 @@ const MobileMenu = ({ setIsMobileMenuDeployed, isMobileMenuDeployed }: Props) =>
                   : activeMenuItem === '/drinks' && text === 'Drinks'
                   ? { backgroundColor: '#000' }
                   : activeMenuItem === '/about' && text === 'About'
-                  ? { backgroundColor: '#000' }
-                  : activeMenuItem === '/blog' && text === 'Blog'
+                  // ? { backgroundColor: '#000' }
+                  // : activeMenuItem === '/blog' && text === 'Blog'
                   ? { backgroundColor: '#000' }
                   : activeMenuItem === '/contact' && text === 'Contact'
                   ? { backgroundColor: '#000' }
